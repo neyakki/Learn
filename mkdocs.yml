@@ -1,0 +1,110 @@
+site_name: Learn
+site_url: http://127.0.0.1:8000
+repo_name: Learn
+repo_url: https://github.com/NetoGeek/PlanLearn
+edit_uri: edit/edit_branch/docs/
+copyright: NetoGeek
+
+nav:
+  - План:
+      - plan/index.md
+      - Рекомендации: plan/recommend.md
+  - Конспекты:
+      - learn/index.md
+      - Основные темы:
+          - Git:
+              - Что такое Git: learn/base/git/what_is_git.md
+              - Установка: learn/base/git/install.md
+              - Основы по работе c Git: learn/base/git/base.md
+              - Ветвление: learn/base/git/branching.md
+              - Инструменты: learn/base/git/tools.md
+              - Шаблон сообщения коммита: learn/base/git/patterns.md
+          - ООП:
+              - Введение в ООП: learn/base/oop/base.md
+              - Проектирование: learn/base/oop/designing.md
+              - Паттерны:
+                  - Порождающие паттерны: learn/base/oop/patterns/generative.md
+          - Чистый код:
+              - Принципы:
+                  - SOLID: learn/base/clear_code/principce/solid.md
+              - Cohesion и coupling: learn/base/clear_code/clear_code/cohesion_coupling.md
+  - Заметки:
+      - notes/index.md
+  - Проекты: projects.md
+  - Книги: books.md
+
+theme:
+  name: material
+  language: ru
+
+  palette:
+    scheme: slate
+    primary: teal
+    accent: light green
+
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - content.code.copy
+    - content.code.annotate
+    - content.code.select
+
+plugins:
+  - termynal
+  - search
+  - glightbox
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/NetoGeek
+    - icon: fontawesome/brands/telegram
+      link: https://github.com/NetoGeek
+    - icon: fontawesome/brands/instagram
+      link: https://github.com/NetoGeek
+    - icon: fontawesome/brands/discord
+      link: https://github.com/NetoGeek
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:wion272@gmail.com
+
+extra_javascript:
+  - js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - tables
+
+  - toc:
+      permalink: true
+      # https://github.com/mkdocs/mkdocs/issues/762
+      slugify:
+        !!python/object/apply:pymdownx.slugs.slugify { kwds: { case: lower } }
+
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      pygments_lang_class: true
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
