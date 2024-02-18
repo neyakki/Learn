@@ -30,6 +30,9 @@ nav:
               - Cohesion и coupling: learn/base/clear_code/clear_code/cohesion_coupling.md
   - Заметки:
       - notes/index.md
+      - Конфигурация:
+          - Python: notes/configs/python.md
+
   - Проекты: projects.md
   - Книги: books.md
 
