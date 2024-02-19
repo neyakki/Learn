@@ -22,12 +22,20 @@ nav:
           - ООП:
               - Введение в ООП: learn/base/oop/base.md
               - Проектирование: learn/base/oop/designing.md
-              - Паттерны:
-                  - Порождающие паттерны: learn/base/oop/patterns/generative.md
           - Чистый код:
               - Принципы:
-                  - SOLID: learn/base/clear_code/principce/solid.md
-              - Cohesion и coupling: learn/base/clear_code/clear_code/cohesion_coupling.md
+                  - SOLID: learn/base/clean_code/principce/solid.md
+              - Cohesion и coupling: learn/base/clean_code/clean_code/cohesion_coupling.md
+              - Паттерны: learn/base/clean_code/patterns/patterns.md
+      - Web:
+          - HTML:
+              - learn/web/html/index.md
+          - CSS:
+              - Основы: learn/web/css/base.md
+              - Flex: learn/web/css/flexbox.md
+              - Grid: learn/web/css/grid.md
+          - JS:
+              - learn/web/js/index.md
   - Заметки:
       - notes/index.md
       - Конфигурация:

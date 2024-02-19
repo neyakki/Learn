@@ -73,10 +73,10 @@ pytest = "^8.0.1"
 ruff = "^0.2.1"
 mypy = "^1.8.0"
 bandit = "^1.7.7"
-
-# https://mypy.readthedocs.io/en/stable/
 coverage = "^7.4.1"
 invoke = "^2.2.0"
+
+# https://mypy.readthedocs.io/en/stable/
 [tool.mypy]
 python_version = "3.10"
 exclude = [
