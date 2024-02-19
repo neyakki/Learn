@@ -28,6 +28,7 @@ nav:
               - Cohesion и coupling: learn/base/clean_code/clean_code/cohesion_coupling.md
               - Паттерны: learn/base/clean_code/patterns/patterns.md
       - Web:
+          - Общее: learn/web/general.md
           - HTML:
               - learn/web/html/index.md
           - CSS:
