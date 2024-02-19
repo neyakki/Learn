@@ -1,0 +1,2403 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://127.0.0.1:8000/learn/base/git/tools/">
+      
+      
+        <link rel="prev" href="../branching/">
+      
+      
+        <link rel="next" href="../patterns/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>Инструменты - Learn</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../termynal.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#инструменты-git" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Learn" class="md-header__button md-logo" aria-label="Learn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learn
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Инструменты
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/NetoGeek/PlanLearn" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Learn
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../plan/" class="md-tabs__link">
+          
+  
+    
+  
+  План
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+    
+  
+  Конспекты
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../notes/" class="md-tabs__link">
+          
+  
+    
+  
+  Заметки
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../projects/" class="md-tabs__link">
+        
+  
+    
+  
+  Проекты
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../books/" class="md-tabs__link">
+        
+  
+    
+  
+  Книги
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Learn" class="md-nav__button md-logo" aria-label="Learn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Learn
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/NetoGeek/PlanLearn" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Learn
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../plan/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    План
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            План
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../plan/recommend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Рекомендации
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Конспекты
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Конспекты
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Основные темы
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Основные темы
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what_is_git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Что такое Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Установка
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Основы по работе c Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../branching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ветвление
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Инструменты
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Инструменты
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#выбор-ревизии" class="md-nav__link">
+    <span class="md-ellipsis">
+      Выбор ревизии
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Выбор ревизии">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#одиночные-ревизии" class="md-nav__link">
+    <span class="md-ellipsis">
+      Одиночные ревизии
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflog-сокращения" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflog-сокращения
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ссылка-на-предков" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ссылка на предков
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#диапазоны-коммитов" class="md-nav__link">
+    <span class="md-ellipsis">
+      Диапазоны коммитов
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Диапазоны коммитов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#две-точки" class="md-nav__link">
+    <span class="md-ellipsis">
+      Две точки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#множественный-выбор" class="md-nav__link">
+    <span class="md-ellipsis">
+      Множественный выбор
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#три-точки" class="md-nav__link">
+    <span class="md-ellipsis">
+      Три точки
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#припрятывание-и-отчистка" class="md-nav__link">
+    <span class="md-ellipsis">
+      Припрятывание и отчистка
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Припрятывание и отчистка">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#припрятывание" class="md-nav__link">
+    <span class="md-ellipsis">
+      Припрятывание
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#перезапись-истории" class="md-nav__link">
+    <span class="md-ellipsis">
+      Перезапись истории
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Перезапись истории">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#изменение-последнего-коммита" class="md-nav__link">
+    <span class="md-ellipsis">
+      Изменение последнего коммита
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#изменение-сообщения-нескольких-коммитов" class="md-nav__link">
+    <span class="md-ellipsis">
+      Изменение сообщения нескольких коммитов
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#раскрытие-тайны-reset-и-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Раскрытие тайны reset и checkout
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Раскрытие тайны reset и checkout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#назначение-команды-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Назначение команды reset
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Назначение команды reset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#шаг-1-перемещает-указатель-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг 1. Перемещает указатель HEAD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#шаг-2-обновление-индекса" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг 2. Обновление индекса
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#шаг-3-обновление-рабочего-каталога" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг 3. Обновление рабочего каталога
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#резюме" class="md-nav__link">
+    <span class="md-ellipsis">
+      Резюме
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#команда-reset-с-указанием-пути" class="md-nav__link">
+    <span class="md-ellipsis">
+      Команда reset с указанием пути
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#команда-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Команда checkout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#резюме_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Резюме
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#отмена-коммита-слияния" class="md-nav__link">
+    <span class="md-ellipsis">
+      Отмена коммита слияния
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Шаблон сообщения коммита
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ООП
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            ООП
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/base/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Введение в ООП
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/designing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Проектирование
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2_3" id="__nav_2_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Паттерны
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Паттерны
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/patterns/generative/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Порождающие паттерны
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Чистый код
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Чистый код
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_1" id="__nav_2_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Принципы
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Принципы
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clear_code/principce/solid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SOLID
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clear_code/clear_code/cohesion_coupling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cohesion и coupling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../notes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Заметки
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Заметки
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Конфигурация
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Конфигурация
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../notes/configs/python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Проекты
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../books/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Книги
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#выбор-ревизии" class="md-nav__link">
+    <span class="md-ellipsis">
+      Выбор ревизии
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Выбор ревизии">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#одиночные-ревизии" class="md-nav__link">
+    <span class="md-ellipsis">
+      Одиночные ревизии
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflog-сокращения" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflog-сокращения
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ссылка-на-предков" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ссылка на предков
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#диапазоны-коммитов" class="md-nav__link">
+    <span class="md-ellipsis">
+      Диапазоны коммитов
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Диапазоны коммитов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#две-точки" class="md-nav__link">
+    <span class="md-ellipsis">
+      Две точки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#множественный-выбор" class="md-nav__link">
+    <span class="md-ellipsis">
+      Множественный выбор
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#три-точки" class="md-nav__link">
+    <span class="md-ellipsis">
+      Три точки
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#припрятывание-и-отчистка" class="md-nav__link">
+    <span class="md-ellipsis">
+      Припрятывание и отчистка
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Припрятывание и отчистка">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#припрятывание" class="md-nav__link">
+    <span class="md-ellipsis">
+      Припрятывание
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#перезапись-истории" class="md-nav__link">
+    <span class="md-ellipsis">
+      Перезапись истории
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Перезапись истории">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#изменение-последнего-коммита" class="md-nav__link">
+    <span class="md-ellipsis">
+      Изменение последнего коммита
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#изменение-сообщения-нескольких-коммитов" class="md-nav__link">
+    <span class="md-ellipsis">
+      Изменение сообщения нескольких коммитов
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#раскрытие-тайны-reset-и-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Раскрытие тайны reset и checkout
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Раскрытие тайны reset и checkout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#назначение-команды-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Назначение команды reset
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Назначение команды reset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#шаг-1-перемещает-указатель-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг 1. Перемещает указатель HEAD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#шаг-2-обновление-индекса" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг 2. Обновление индекса
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#шаг-3-обновление-рабочего-каталога" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг 3. Обновление рабочего каталога
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#резюме" class="md-nav__link">
+    <span class="md-ellipsis">
+      Резюме
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#команда-reset-с-указанием-пути" class="md-nav__link">
+    <span class="md-ellipsis">
+      Команда reset с указанием пути
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#команда-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Команда checkout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#резюме_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Резюме
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#отмена-коммита-слияния" class="md-nav__link">
+    <span class="md-ellipsis">
+      Отмена коммита слияния
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="инструменты-git">Инструменты Git<a class="headerlink" href="#инструменты-git" title="Permanent link">&para;</a></h1>
+<h2 id="выбор-ревизии">Выбор ревизии<a class="headerlink" href="#выбор-ревизии" title="Permanent link">&para;</a></h2>
+<p>Git дает возможность выбирать коммиты или диапазоны коммитов.</p>
+<h3 id="одиночные-ревизии">Одиночные ревизии<a class="headerlink" href="#одиночные-ревизии" title="Permanent link">&para;</a></h3>
+<p>На коммит можно ссылаться по его хешу (SHA-1). Git достаточно умен, чтобы понять на какой коммит следует ссылаться по первым символам хеша.</p>
+<p>В данном случае эти команду эквивалентны</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git show 1c002dd4b536e7479fe34593e72e6c6c1819e53b</span><span data-ty="input" data-ty-prompt="$">git show 1c002dd4b536e7479f</span><span data-ty="input" data-ty-prompt="$">git show 1c002d</span><span data-ty></span></div>
+
+<p>Также можно указывать ветку, указывающей на этот коммит</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git show ca82a6dff817ec66f44342007202690a93763949</span><span data-ty="input" data-ty-prompt="$">git show topic1</span><span data-ty></span></div>
+
+<h3 id="reflog-сокращения">Reflog-сокращения<a class="headerlink" href="#reflog-сокращения" title="Permanent link">&para;</a></h3>
+<p>Git в фоновом режиме ведет журнал ссылок, сохраняя последние места куда указывал <em>HEAD</em> и ветки за последние несколько месяцев.</p>
+<p>Для просмотра этого журнала используется команда <a href="https://git-scm.com/docs/git-reflog"><code>git reflog</code></a>:</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git reflog</span><span data-ty>734713b HEAD@{0}: commit: Fix refs handling, add gc auto, update tests<br>d921970 HEAD@{1}: merge phedders/rdocs: Merge made by the 'recursive' strategy.<br>1c002dd HEAD@{2}: commit: Add some blame and merge stuff<br>1c36188 HEAD@{3}: rebase -i (squash): updating HEAD<br>95df984 HEAD@{4}: commit: # This is a combination of two commits.<br>1c36188 HEAD@{5}: rebase -i (squash): updating HEAD<br>7e05da5 HEAD@{6}: rebase -i (pick): updating HEAD<br></span></div>
+
+<p>Где, <em>HEAD@{5}</em> означает, куда указывал <em>HEAD</em> 5 шагов назад.</p>
+<p>Также можно посмотреть, в каком состоянии пребывала ветка в определенный промежуток времени.</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git show master@{yesterday}</span><span data-ty></span></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>История Reflog является локальной. В других репозиториях история будет другой</p>
+</div>
+<h3 id="ссылка-на-предков">Ссылка на предков<a class="headerlink" href="#ссылка-на-предков" title="Permanent link">&para;</a></h3>
+<p>Также указать на коммит можно с помощью его родословной. Символ <em>^</em> указывает на родителя текущего коммита. Если указать число после символа <em>^</em>, то это будет означать взять второго родителя текущего коммита. Это полезно для коммитов слияния.</p>
+<p>Также можно использовать символ <em>~</em> для указания предков коммита. Он также указывает на первого родителя коммита, разница заметна при указании числа после символа <em>~</em>. Например <em>HEAD~2</em> говорит нам "первый родитель первого коммита".</p>
+<p>Текущая история коммитов:</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git log --pretty=format:'%h %s' --graph</span><span data-ty>* 734713b Fix refs handling, add gc auto, update tests<br>*   d921970 Merge commit 'phedders/rdocs'<br>|\<br>| * 35cfb2b Some rdoc changes<br>* | 1c002dd Add some blame and merge stuff<br>|/<br>* 1c36188 Ignore *.gem<br>* 9b29157 Add open3_detach to gemspec file list<br></span></div>
+
+<p>Использование символа <em>^</em>:</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git show d921970^</span><span data-ty>commit 1c002dd4b536e7479fe34593e72e6c6c1819e53b<br>Author: Scott Chacon &lt;schacon@gmail.com&gt;<br>Date:   Thu Dec 11 14:58:32 2008 -0800<br><br>    Add some blame and merge stuff<br></span><span data-ty="input" data-ty-prompt="$">git show d921970^2</span><span data-ty>commit 35cfb2b795a55793d7cc56a6cc2060b4bb732548<br>Author: Paul Hedderly &lt;paul+git@mjr.org&gt;<br>Date:   Wed Dec 10 22:22:03 2008 +0000<br><br>    Some rdoc changes<br></span></div>
+
+<p>Использование символа <em>~</em>:</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git show HEAD~3</span><span data-ty>commit 1c3618887afb5fbcbea25b7c013f4e2114448b8d<br>Author: Tom Preston-Werner &lt;tom@mojombo.com&gt;<br>Date:   Fri Nov 7 13:47:59 2008 -0500<br><br>    Ignore *.gem<br></span></div>
+
+<h3 id="диапазоны-коммитов">Диапазоны коммитов<a class="headerlink" href="#диапазоны-коммитов" title="Permanent link">&para;</a></h3>
+<h4 id="две-точки">Две точки<a class="headerlink" href="#две-точки" title="Permanent link">&para;</a></h4>
+<p>Синтаксис с двумя точками говорит Git включить в диапазон коммитов только те, которые достижимы из одной, но не достижимы из другой.</p>
+<pre class="mermaid"><code>flowchart LR
+    98cf9:::commit --- 0de24:::commit --- 834ee:::commit --- cd432:::commit
+
+    0de24:::commit --- 90ea9:::commit --- e43da:::commit
+
+    e43da --- master:::branch
+    cd432 --- test:::branch
+
+    classDef commit fill:#ded8c8, color: #000, stroke: #000
+    classDef branch fill:#cfae88, color: #000, stroke: #000</code></pre>
+<p>Все коммиты которые доступны из ветки <em>test</em>, но не доступны из ветки <em>master</em>:</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git log master..test</span><span data-ty>cd432<br>834ee<br></span></div>
+
+<p>Если поменять ветки местами, то мы выведем коммиты доступные в ветке <em>master</em>, но не доступные в ветке <em>test</em>:</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git log test..master</span><span data-ty>e43da<br>90ea9<br></span></div>
+
+<h4 id="множественный-выбор">Множественный выбор<a class="headerlink" href="#множественный-выбор" title="Permanent link">&para;</a></h4>
+<p>Также есть более удобный способ выбора коммитов, позволяющий указывать более двух веток:</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git log refA refB ^refC</span><span data-ty="input" data-ty-prompt="$">git log refA refB --not refC</span><span data-ty></span></div>
+
+<p>Покажет команды доступные из <em>refA</em> и <em>refB</em>, но не доступные в <em>refC</em></p>
+<h4 id="три-точки">Три точки<a class="headerlink" href="#три-точки" title="Permanent link">&para;</a></h4>
+<p>Синтаксис с тремя точками позволяет выбирать коммиты доступные хотя бы в одной из ссылок, но не в обеих сразу.</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty>git log master...test<br>e43da<br>90ea9<br>cd432<br>834ee<br></span></div>
+
+<p>Опция <em>--left-right</em> показывает сторону диапазону, с которой был сделан коммит.</p>
+<h2 id="припрятывание-и-отчистка">Припрятывание и отчистка<a class="headerlink" href="#припрятывание-и-отчистка" title="Permanent link">&para;</a></h2>
+<h3 id="припрятывание">Припрятывание<a class="headerlink" href="#припрятывание" title="Permanent link">&para;</a></h3>
+<p>Операция <a href="https://git-scm.com/docs/git-stash"><code>git stash</code></a> берет изменённое состояние рабочего каталога, то есть изменённые отслеживаемые файлы и проиндексированные изменения, и сохраняет их в хранилище незавершённых изменений, которые вы можете в любое время применить обратно.</p>
+<p>Например, мы имеем следующий индекс файлов:</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git status</span><span data-ty>On branch main<br>Your branch is up to date with 'origin/main'.<br><br>Changes not staged for commit:<br>  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)<br>  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)<br>        modified:   docs/compendium/base/git//base.md<br>        modified:   mkdocs.yml<br><br>Untracked files:<br>  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)<br>        docs/compendium/base/git//tools.md<br><br>no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)<br></span></div>
+
+<p>Теперь мы хотим сменить ветку, но не хотим фиксировать текущие изменения. Для этого мы выполняем команду <code>git stash</code>, чтобы спрятать наши изменения.</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git stash</span><span data-ty>Saved working directory and index state WIP on main: b3037c2 Рефакторинг<br></span></div>
+
+<p>Теперь можно заменить, что рабочая копия не содержит отслеживаемых изменений</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git status</span><span data-ty>On branch main<br>Your branch is up to date with 'origin/main'.<br><br>Untracked files:<br>  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)<br>        docs/compendium/base/git//tools.md<br><br>nothing added to commit but untracked files present (use &quot;git add&quot; to track)<br></span></div>
+
+<p>Посмотреть список припрятанных изменений, можно с помощью:</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git stash list</span><span data-ty>stash@{0}: WIP on main: b3037c2 Рефакторинг<br></span></div>
+
+<p>Восстановить изменения можно с помощью команды <code>git stash apply</code>. Эта команда применяет изменения, но не удаляет их. Чтобы выполнить удаление изменений <code>git stash drop</code>.</p>
+<p>Команда <code>git stash pop</code> можно сказать объединяет обе этих команд.</p>
+<p>Если указать опцию <em>--include-untracked</em> или <em>-u</em>, Git также припрячет все неотслеживаемые файлы, которые вы создали.</p>
+<p>А опция <em>--all</em> спрячет все файлы, в том числе игнорируемые.</p>
+<p>Опция <em>--patch</em> спросит, какие изменения припрятать, а какие оставить в рабочем каталоге.</p>
+<p>Команда <code>git stash branch</code> позволяет создать ветку из припрятанных изменений. Это полезно, если после припрятывания были внесены изменения, то возникнут конфликты слияния.</p>
+<h2 id="перезапись-истории">Перезапись истории<a class="headerlink" href="#перезапись-истории" title="Permanent link">&para;</a></h2>
+<h3 id="изменение-последнего-коммита">Изменение последнего коммита<a class="headerlink" href="#изменение-последнего-коммита" title="Permanent link">&para;</a></h3>
+<p>Команда <code>git commit --amend</code> позволяет изменить:</p>
+<ul>
+<li>Сообщение коммита;</li>
+<li>Изменить, удалить или добавить файл в только что сделанный коммит.</li>
+</ul>
+<h3 id="изменение-сообщения-нескольких-коммитов">Изменение сообщения нескольких коммитов<a class="headerlink" href="#изменение-сообщения-нескольких-коммитов" title="Permanent link">&para;</a></h3>
+<p>С помощью интерактивного режима команды <code>git rebase</code> можно останавливаться после каждого нужного коммита и изменять, сообщение, добавлять, удалять или изменять файлы.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Не включайте в такой диапазон коммит, который уже был отправлен на центральный сервер: сделав это, вы можете запутать других разработчиков, предоставив вторую версию одних и тех же изменений.</p>
+</div>
+<p>Изменение последних двух коммитов:</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git rebase -i HEAD~2</span><span data-ty>pick 6ee2173 Закончил главу ветвление<br>pick b3037c2 Рефакторинг<br></span><span class="termynal-comment" data-ty># Rebase 135f8c9..b3037c2 onto 135f8c9 (2 commands)</span><span data-ty>#</span><span class="termynal-comment" data-ty># Commands:</span><span class="termynal-comment" data-ty># p, pick &lt;commit&gt; = use commit</span><span class="termynal-comment" data-ty># r, reword &lt;commit&gt; = use commit, but edit the commit message</span><span class="termynal-comment" data-ty># e, edit &lt;commit&gt; = use commit, but stop for amending</span><span class="termynal-comment" data-ty># s, squash &lt;commit&gt; = use commit, but meld into previous commit</span><span class="termynal-comment" data-ty># f, fixup [-C | -c] &lt;commit&gt; = like &quot;squash&quot; but keep only the previous</span><span class="termynal-comment" data-ty>#                    commit's log message, unless -C is used, in which case</span><span class="termynal-comment" data-ty>#                    keep only this commit's message; -c is same as -C but</span><span class="termynal-comment" data-ty>#                    opens the editor</span><span class="termynal-comment" data-ty># x, exec &lt;command&gt; = run command (the rest of the line) using shell</span><span class="termynal-comment" data-ty># b, break = stop here (continue rebase later with 'git rebase --continue')</span><span class="termynal-comment" data-ty># d, drop &lt;commit&gt; = remove commit</span><span class="termynal-comment" data-ty># l, label &lt;label&gt; = label current HEAD with a name</span><span class="termynal-comment" data-ty># t, reset &lt;label&gt; = reset HEAD to a label</span><span class="termynal-comment" data-ty># m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]</span><span class="termynal-comment" data-ty># .       create a merge commit using the original merge commit's</span><span class="termynal-comment" data-ty># .       message (or the oneline, if no original merge commit was</span><span class="termynal-comment" data-ty># .       specified); use -c &lt;commit&gt; to reword the commit message</span><span data-ty>#</span><span class="termynal-comment" data-ty># These lines can be re-ordered; they are executed from top to bottom.</span><span data-ty>#</span><span class="termynal-comment" data-ty># If you remove a line here THAT COMMIT WILL BE LOST.</span><span data-ty>#</span><span class="termynal-comment" data-ty># However, if you remove everything, the rebase will be aborted.</span><span data-ty></span></div>
+
+<h2 id="раскрытие-тайны-reset-и-checkout">Раскрытие тайны reset и checkout<a class="headerlink" href="#раскрытие-тайны-reset-и-checkout" title="Permanent link">&para;</a></h2>
+<p>Git управляет тремя различными деревьями:</p>
+<ul>
+<li>HEAD - снимок последнего коммита, родитель следующего;</li>
+<li>Индекс - снимок следующего коммита;</li>
+<li>Рабочая директория - песочница.</li>
+</ul>
+<pre class="mermaid"><code>---
+title: Технологический процесс
+---
+sequenceDiagram
+    participant wd as Working Directory
+    participant sa as Staging Area
+    participant gr as HEAD
+    wd -&gt;&gt; sa: Stage Fixed
+    sa -&gt;&gt; gr: Commit
+    gr -&gt;&gt; wd: Checkout the project</code></pre>
+<p>Разберем весь цикл.</p>
+<p>Когда мы инициализируем Git репозиторий, где ссылка HEAD будет указывать на не существующую ветку. И рабочий каталог содержит данные.</p>
+<pre class="mermaid"><code>flowchart LR
+    HEAD:::head --&gt; master:::branch --&gt; ?:::commit
+
+    classDef branch fill:#cfae88, color: #000, stroke: #000
+    classDef head fill:#79b3ba, color: #000, stroke: #000
+    classDef commit fill:#fff, color: #000, stroke: #000</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">HEAD</th>
+<th style="text-align: center;">Index</th>
+<th style="text-align: center;">Working Directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">file.txt (v1)</td>
+</tr>
+</tbody>
+</table>
+<p>После того как мы выполняем команду <code>git add</code> файл сохраняется в индекс:</p>
+<pre class="mermaid"><code>flowchart LR
+    HEAD:::head --&gt; master:::branch --&gt; ?:::commit
+
+    classDef branch fill:#cfae88, color: #000, stroke: #000
+    classDef head fill:#79b3ba, color: #000, stroke: #000
+    classDef commit fill:#fff, color: #000, stroke: #000</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">HEAD</th>
+<th style="text-align: center;">Index</th>
+<th style="text-align: center;">Working Directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">file.txt (v1)</td>
+<td style="text-align: center;">file.txt (v1)</td>
+</tr>
+</tbody>
+</table>
+<p>Затем мы выполняем команду <code>git commit</code>, которая сохраняет содержимое индекса в объект коммита:</p>
+<pre class="mermaid"><code>flowchart LR
+    HEAD:::head --&gt; master:::branch --&gt; eca123:::commit
+
+    classDef branch fill:#cfae88, color: #000, stroke: #000
+    classDef head fill:#79b3ba, color: #000, stroke: #000
+    classDef commit fill:#fff, color: #000, stroke: #000</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">HEAD</th>
+<th style="text-align: center;">Index</th>
+<th style="text-align: center;">Working Directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">eca123<br>file.txt (v1)</td>
+<td style="text-align: center;">file.txt (v1)</td>
+<td style="text-align: center;">file.txt (v1)</td>
+</tr>
+</tbody>
+</table>
+<p>Теперь если мы изменим наш файл, дерево будет выглядеть следующим образом:</p>
+<pre class="mermaid"><code>flowchart LR
+    HEAD:::head --&gt; master:::branch --&gt; eca123:::commit
+
+    classDef branch fill:#cfae88, color: #000, stroke: #000
+    classDef head fill:#79b3ba, color: #000, stroke: #000
+    classDef commit fill:#fff, color: #000, stroke: #000</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">HEAD</th>
+<th style="text-align: center;">Index</th>
+<th style="text-align: center;">Working Directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">eca123<br>file.txt (v1)</td>
+<td style="text-align: center;">file.txt (v1)</td>
+<td style="text-align: center;">file.txt (v2)</td>
+</tr>
+</tbody>
+</table>
+<p>После выполнения всех предыдущих шагов, картина будет следующей:</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph commit
+        direction TB
+        eca123:::commit --&gt; 43ed32:::commit --&gt; 9e5e6a:::commit
+    end
+    HEAD:::head --&gt; master:::branch --&gt; 9e5e6a:::commit
+
+    classDef branch fill:#cfae88, color: #000, stroke: #000
+    classDef head fill:#79b3ba, color: #000, stroke: #000
+    classDef commit fill:#fff, color: #000, stroke: #000</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">HEAD</th>
+<th style="text-align: center;">Index</th>
+<th style="text-align: center;">Working Directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">9e5e6a<br>file.txt (v2)</td>
+<td style="text-align: center;">file.txt (v2)</td>
+<td style="text-align: center;">file.txt (v2)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="назначение-команды-reset">Назначение команды reset<a class="headerlink" href="#назначение-команды-reset" title="Permanent link">&para;</a></h3>
+<p>Разберемся, что делает команда <code>git reset</code>:</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph commit
+        direction TB
+        eca123:::commit --&gt; 43ed32:::commit --&gt; 9e5e6a:::commit
+    end
+    HEAD:::head --&gt; master:::branch --&gt; 9e5e6a:::commit
+
+    classDef branch fill:#cfae88, color: #000, stroke: #000
+    classDef head fill:#79b3ba, color: #000, stroke: #000
+    classDef commit fill:#fff, color: #000, stroke: #000</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">HEAD</th>
+<th style="text-align: center;">Index</th>
+<th style="text-align: center;">Working Directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">9e5e6a<br>file.txt (v3)</td>
+<td style="text-align: center;">file.txt (v3)</td>
+<td style="text-align: center;">file.txt (v3)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="шаг-1-перемещает-указатель-head">Шаг 1. Перемещает указатель HEAD<a class="headerlink" href="#шаг-1-перемещает-указатель-head" title="Permanent link">&para;</a></h4>
+<p>Первое, что сделает эта команда - переместит то, на что указывает HEAD.</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph commit
+        direction TB
+        eca123:::commit --&gt; 43ed32:::commit --&gt; 9e5e6a:::commit
+    end
+    HEAD:::head --&gt; master:::branch --&gt; 43ed32:::commit
+
+    classDef branch fill:#cfae88, color: #000, stroke: #000
+    classDef head fill:#79b3ba, color: #000, stroke: #000
+    classDef commit fill:#fff, color: #000, stroke: #000</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">HEAD</th>
+<th style="text-align: center;">Index</th>
+<th style="text-align: center;">Working Directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">43ed32<br>file.txt (v2)</td>
+<td style="text-align: center;">file.txt (v3)</td>
+<td style="text-align: center;">file.txt (v3)</td>
+</tr>
+</tbody>
+</table>
+<p>Команда <code>git reset --soft HEAD~</code> остановит выполнение на этом этапе.</p>
+<p>Получается, что это команда выполняет отмену операции <code>git commit</code>.</p>
+<h4 id="шаг-2-обновление-индекса">Шаг 2. Обновление индекса<a class="headerlink" href="#шаг-2-обновление-индекса" title="Permanent link">&para;</a></h4>
+<p>Следующий шаг, обновление индекса содержимым того снимка, на который указывает <em>HEAD</em>.</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph commit
+        direction TB
+        eca123:::commit --&gt; 43ed32:::commit --&gt; 9e5e6a:::commit
+    end
+    HEAD:::head --&gt; master:::branch --&gt; 43ed32:::commit
+
+    classDef branch fill:#cfae88, color: #000, stroke: #000
+    classDef head fill:#79b3ba, color: #000, stroke: #000
+    classDef commit fill:#fff, color: #000, stroke: #000</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">HEAD</th>
+<th style="text-align: center;">Index</th>
+<th style="text-align: center;">Working Directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">43ed32<br>file.txt (v2)</td>
+<td style="text-align: center;">file.txt (v2)</td>
+<td style="text-align: center;">file.txt (v3)</td>
+</tr>
+</tbody>
+</table>
+<p>Команда <code>git reset [--mixed] HEAD~</code> (опция --mixed не обязательна) остановит выполнение на данном шаге. Эта операция отменяют операцию добавления файлов в индекс.</p>
+<h4 id="шаг-3-обновление-рабочего-каталога">Шаг 3. Обновление рабочего каталога<a class="headerlink" href="#шаг-3-обновление-рабочего-каталога" title="Permanent link">&para;</a></h4>
+<p>Теперь команда <code>reset</code> приведет рабочий каталог к тому же виду, что и индекс.</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph commit
+        direction TB
+        eca123:::commit --&gt; 43ed32:::commit --&gt; 9e5e6a:::commit
+    end
+    HEAD:::head --&gt; master:::branch --&gt; 43ed32:::commit
+
+    classDef branch fill:#cfae88, color: #000, stroke: #000
+    classDef head fill:#79b3ba, color: #000, stroke: #000
+    classDef commit fill:#fff, color: #000, stroke: #000</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">HEAD</th>
+<th style="text-align: center;">Index</th>
+<th style="text-align: center;">Working Directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">43ed32<br>file.txt (v2)</td>
+<td style="text-align: center;">file.txt (v2)</td>
+<td style="text-align: center;">file.txt (v2)</td>
+</tr>
+</tbody>
+</table>
+<p>Команда <code>git reset --hard HEAD~</code> остановится на этом шаге. Сейчас мы отменили все изменения, внесенные в рабочий каталог.</p>
+<h4 id="резюме">Резюме<a class="headerlink" href="#резюме" title="Permanent link">&para;</a></h4>
+<p>Команда reset в заранее определённом порядке перезаписывает три дерева Git, останавливаясь тогда, когда вы ей скажете:</p>
+<ul>
+<li>Перемещает ветку, на которую указывает HEAD (останавливается на этом, если указана опция --soft);</li>
+<li>Делает Индекс таким же как и HEAD (останавливается на этом, если не указана опция --hard);</li>
+<li>Делает Рабочий Каталог таким же как и Индекс.</li>
+</ul>
+<h3 id="команда-reset-с-указанием-пути">Команда reset с указанием пути<a class="headerlink" href="#команда-reset-с-указанием-пути" title="Permanent link">&para;</a></h3>
+<p>Команда <code>reset</code> может применять путь к файлу, которым будет оперировать команда. Первый шаг выполнения будет пропущен, т.к. указатель <em>HEAD</em> не может частично ссылаться на один коммит, а частично на другой. Но индекс и каталог могут.</p>
+<p>Мы можем указать команде <code>reset</code> брать версию не из HEAD, а из указанного коммита: <code>git reset 4444 file.txt</code></p>
+<h3 id="команда-checkout">Команда checkout<a class="headerlink" href="#команда-checkout" title="Permanent link">&para;</a></h3>
+<p>Команда <code>checkout</code> выполняет те же самые функции, что и команда <code>reset</code>. Но есть несколько отличий:</p>
+<ul>
+<li>Команда <code>checkout</code> бережно относится к рабочему каталогу, проверяя, что она не трогает файлы, в которых есть изменения;</li>
+<li>Команда <code>checkout</code> перемещает сам <em>HEAD</em>, а не ветку на которую указывает <em>HEAD</em>.</li>
+</ul>
+<h3 id="резюме_1">Резюме<a class="headerlink" href="#резюме_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">HEAD</th>
+<th style="text-align: center;">Индекс</th>
+<th style="text-align: center;">Рабочий каталог</th>
+<th style="text-align: center;">Сохранность рабочего каталога?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">На уровне коммитов</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">reset --soft [коммит]</td>
+<td style="text-align: center;">Ветка</td>
+<td style="text-align: center;">Нет</td>
+<td style="text-align: center;">Нет</td>
+<td style="text-align: center;">Да</td>
+</tr>
+<tr>
+<td style="text-align: left;">reset [коммит]</td>
+<td style="text-align: center;">Ветка</td>
+<td style="text-align: center;">Да</td>
+<td style="text-align: center;">Нет</td>
+<td style="text-align: center;">Да</td>
+</tr>
+<tr>
+<td style="text-align: left;">reset --hard [коммит]</td>
+<td style="text-align: center;">Ветка</td>
+<td style="text-align: center;">Да</td>
+<td style="text-align: center;">Да</td>
+<td style="text-align: center;">Да</td>
+</tr>
+<tr>
+<td style="text-align: left;">checkout [коммит]</td>
+<td style="text-align: center;">HEAD</td>
+<td style="text-align: center;">Да</td>
+<td style="text-align: center;">Да</td>
+<td style="text-align: center;">Да</td>
+</tr>
+<tr>
+<td style="text-align: left;">На уровне файлов</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">reset (коммит) [путь]</td>
+<td style="text-align: center;">Нет</td>
+<td style="text-align: center;">Да</td>
+<td style="text-align: center;">Нет</td>
+<td style="text-align: center;">Да</td>
+</tr>
+<tr>
+<td style="text-align: left;">checkout (коммит) [путь]</td>
+<td style="text-align: center;">Нет</td>
+<td style="text-align: center;">Да</td>
+<td style="text-align: center;">Да</td>
+<td style="text-align: center;">Нет</td>
+</tr>
+</tbody>
+</table>
+<h2 id="отмена-коммита-слияния">Отмена коммита слияния<a class="headerlink" href="#отмена-коммита-слияния" title="Permanent link">&para;</a></h2>
+<p>Git предоставляет возможность создать новый коммит, который откатывает все изменения. Такой коммит называется коммитом восстановления. Выполняется он командой:</p>
+<pre class="mermaid"><code>flowchart LR
+    eca123:::commit --- 43ed32:::commit --- 9e5e6a:::commit --- 543932:::commit
+    9e5e6a:::commit --- 3e4e5c:::commit
+
+    3e4e5c:::commit --- 5a6ac3:::commit
+    543932:::commit --- 5a6ac3:::commit
+
+    5a6ac3:::commit --- master:::branch
+    3e4e5c:::commit --- test:::branch
+
+    classDef branch fill:#cfae88, color: #000, stroke: #000
+    classDef head fill:#79b3ba, color: #000, stroke: #000
+    classDef commit fill:#ded8c8, color: #000, stroke: #000</code></pre>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">git revert -m 1 HEAD</span><span data-ty></span></div>
+
+<p>Где опция <code>-m 1</code> указывает какой родитель является "основной веткой".</p>
+<pre class="mermaid"><code>flowchart LR
+    eca123:::commit --- 43ed32:::commit --- 9e5e6a:::commit --- 543932:::commit
+    9e5e6a:::commit --- 3e4e5c:::commit
+
+    3e4e5c:::commit --- 5a6ac3:::commit
+    543932:::commit --- 5a6ac3:::commit
+
+    5a6ac3:::commit --- 9e0ac3:::commit
+
+    9e0ac3:::commit --- master:::branch
+    3e4e5c:::commit --- test:::branch
+
+    classDef branch fill:#cfae88, color: #000, stroke: #000
+    classDef head fill:#79b3ba, color: #000, stroke: #000
+    classDef commit fill:#ded8c8, color: #000, stroke: #000</code></pre>
+<p>Новый коммит <strong>9e0ac3</strong> имеет точно такое же содержимое как и <strong>543932</strong>. Теперь история выглядит так, как будто слияние никогда не выполнялось, за одним исключением, "не слитые" коммиты присутствуют в истории. Если мы снова попытаемся смерджить изменения, то добавятся только изменения которых не было раньше.</p>
+<p>Лучшим решением данной проблемы является откат коммита отмены слияния, так как теперь вы хотите внести изменения, которые были отменены, а затем создание нового коммита слияния:</p>
+<pre class="mermaid"><code>flowchart LR
+    eca123:::commit --- 43ed32:::commit --- 9e5e6a:::commit --- 543932:::commit
+    9e5e6a:::commit --- 3e4e5c:::commit
+
+    3e4e5c:::commit --- 5a6ac3:::commit
+    543932:::commit --- 5a6ac3:::commit
+
+    5a6ac3:::commit --- 9e0ac3:::commit
+    9e0ac3:::commit --- 9dd323:::commit
+    3e4e5c:::commit --- 9dd323:::commit
+
+    9dd323:::commit --- master:::branch
+    3e4e5c:::commit --- test:::branch
+
+    classDef branch fill:#cfae88, color: #000, stroke: #000
+    classDef head fill:#79b3ba, color: #000, stroke: #000
+    classDef commit fill:#ded8c8, color: #000, stroke: #000</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      NetoGeek
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/NetoGeek" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/NetoGeek" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/NetoGeek" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/NetoGeek" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:wion272@gmail.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "content.code.copy", "content.code.annotate", "content.code.select"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+        <script src="../../../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../../termynal.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
