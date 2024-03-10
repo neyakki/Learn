@@ -62,6 +62,7 @@ theme:
     - content.code.copy
     - content.code.annotate
     - content.code.select
+    - content.tabs.link
 
 plugins:
   - termynal

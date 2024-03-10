@@ -37,47 +37,51 @@
 
 Изучить я хочу 4 (+2) языка - _python_, _javascript_, _go_, _rust_, _c_, _assembler_.
 
-* Python:
+-   Python:
 
-    - Фреймворки и библиотеки:
+    -   Фреймворки и библиотеки:
 
-        - FastAPI;
-        - Pydantic;
-        - SQLAlchemy;
-        - Django / DRF;
-        - Alembic;
-        - Prompt;
-        - Cookiecutter;
+        -   FastAPI;
+        -   Pydantic;
+        -   SQLAlchemy;
+        -   Django / DRF;
+        -   Alembic;
+        -   Prompt;
+        -   Cookiecutter;
 
-    - Утилиты:
+    -   Утилиты:
 
-        - Pytest;
-        - Mypy;
-        - poetry;
-        - ruff;
-        - pre-commit;
-        - invoke;
-        - mkdocs
+        -   Pytest;
+        -   Mypy;
+        -   poetry;
+        -   ruff;
+        -   pre-commit;
+        -   invoke;
+        -   mkdocs
 
-* JavaScript:
+-   JavaScript:
 
-    - Фреймворки и библиотеки:
+    -   Фреймворки и библиотеки:
 
-        - Vue;
-        - React;
-        - d3.js
+        -   Vue;
+        -   React;
+        -   d3.js
+        -   flatpickr
 
-    - Утилиты:
+    -   Утилиты:
 
-        - npm;
-        - vite;
-        - TypeScript;
-        - ESlint;
-        - Husky;
-        - Mocha;
-        - Jest;
-        - TestCafe;
-        - Istanbul;
-        - esdocs;
-        - babel;
-        - emmet
+        -   npm;
+        -   vite;
+        -   TypeScript;
+        -   ESlint;
+        -   Husky;
+        -   Mocha;
+        -   Jest;
+        -   TestCafe;
+        -   Istanbul;
+        -   esdocs;
+        -   babel;
+        -   emmet
+
+-   CSS / SCSS
+-   Tailwind
