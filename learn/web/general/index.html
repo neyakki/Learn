@@ -1102,6 +1102,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#веб-сервер" class="md-nav__link">
+    <span class="md-ellipsis">
+      Веб-сервер
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1575,6 +1584,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#веб-сервер" class="md-nav__link">
+    <span class="md-ellipsis">
+      Веб-сервер
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1696,6 +1714,58 @@
 <li>Асимметричный ключ — каждая сторона имеет два ключа: публичный и частный. Публичный ключ доступен любому. Частный известен только владельцу. Если браузер хочет отправить сообщение, то он находит публичный ключ сервера, шифрует сообщение и отправляет на сервер. Далее сервер расшифровывает полученное сообщение с помощью своего частного ключа. Чтобы ответить пользователю, сервер делает те же самые действия: поиск публичного ключа собеседника, шифрование, отправка;</li>
 <li>Симметричный ключ — у обеих сторон есть один ключ, с помощью которого они передают данные. Между двумя сторонами уже должен быть установлен первичный контакт, чтобы браузер и сервер знали, на каком языке общаться.</li>
 </ul>
+<h2 id="веб-сервер">Веб-сервер<a class="headerlink" href="#веб-сервер" title="Permanent link">&para;</a></h2>
+<p>Веб-сервер (web server) - это программное обеспечение или вычислительный узел, который обрабатывает запросы от клиентов и предоставляет им веб-страницы, изображения, видео и другие ресурсы через протокол HTTP (Hypertext Transfer Protocol) или его защищенную версию HTTPS.</p>
+<p>Веб-сервер – это программный компонент, который предоставляет статические данные, такие как изображения, файлы и текст, в ответ на запросы клиентов. Сервер приложений добавляет бизнес-логику для вычисления ответа веб-сервера. Оба термина используются как синонимы, и наиболее популярными серверными программными решениями сегодня являются гибридные серверы веб-приложений. Веб-сервер и сервер приложений работают на независимых процессах.</p>
+<p>Взаимодействие браузера и веб-сервера:</p>
+<ol>
+<li>Браузер ищет IP-адрес в DNS с помощью URL-адреса;</li>
+<li>Браузер отправляет запрос на получение информации;</li>
+<li>Веб-сервер возвращает статический контент;</li>
+<li>Браузер отображает полученную информацию.</li>
+</ol>
+<p>Сервер приложений расширяет возможности веб-сервера. Он предоставляет среду выполнения, в которой крутится основное приложение. Взаимодействие осуществляется следующим образом.</p>
+<ol>
+<li>Браузер ищет IP-адрес в DNS с помощью URL-адреса;</li>
+<li>Браузер отправляет запрос на получение информации;</li>
+<li>Веб-сервер передает запрос на сервер приложений;</li>
+<li>Сервер приложений выполняет определенную логику и взаимодействие с другими сервисами;</li>
+<li>Сервер приложений отправляет ответ веб-серверу;</li>
+<li>Веб-сервер возвращает ответ браузеру;</li>
+<li>Браузер отображает полученную информацию.</li>
+</ol>
+<p>Различия между веб-сервером и сервером приложения</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Веб-сервер</th>
+<th style="text-align: center;">Сервер приложений</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Охваченные задачи</td>
+<td style="text-align: center;">Веб-серверы предоставляют ответы на простые запросы.</td>
+<td style="text-align: center;">Сервер приложений предоставляет более сложное содержимое из баз данных, сервисов и корпоративных систем.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Используемые протоколы</td>
+<td style="text-align: center;">Веб-серверы в основном используют HTTP. Они также поддерживают FTP и SMTP.</td>
+<td style="text-align: center;">Серверы приложений поддерживают множество протоколов.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Типы контента</td>
+<td style="text-align: center;">Веб-серверы предоставляют статический контент, такой как HTML-страницы, изображения, видео и файлы.</td>
+<td style="text-align: center;">Серверы приложений предоставляют динамический контент, например обновления в реальном времени, персонализированную информацию и поддержку клиентов.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Многопоточность</td>
+<td style="text-align: center;">Как правило, многопоточность не используется.</td>
+<td style="text-align: center;">Используется многопоточность для одновременной обработки запросов.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -1713,6 +1783,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1803,7 +1875,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "content.code.copy", "content.code.annotate", "content.code.select"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "content.code.copy", "content.code.annotate", "content.code.select", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>

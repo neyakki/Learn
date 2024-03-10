@@ -8,28 +8,24 @@
       
       
       
-        <link rel="canonical" href="http://127.0.0.1:8000/learn/base/clean_code/principce/solid/">
+        <link rel="canonical" href="http://127.0.0.1:8000/learn/base/clean_code/patterns/generative/singleton/">
       
       
-        <link rel="prev" href="../../../oop/designing/">
       
       
-        <link rel="next" href="../../clean_code/cohesion_coupling/">
-      
-      
-      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
-        <title>SOLID - Learn</title>
+        <title>Синглтон (Singleton) - Learn</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.f2e4d321.min.css">
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.f2e4d321.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,16 +44,16 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../termynal.css">
+      <link rel="stylesheet" href="../../../../../../termynal.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -66,7 +62,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -83,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#принцип-solid" class="md-skip">
+        <a href="#синглтон-singleton" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -97,7 +93,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="../../../../.." title="Learn" class="md-header__button md-logo" aria-label="Learn" data-md-component="logo">
+    <a href="../../../../../.." title="Learn" class="md-header__button md-logo" aria-label="Learn" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -117,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SOLID
+              Синглтон (Singleton)
             
           </span>
         </div>
@@ -200,7 +196,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../plan/" class="md-tabs__link">
+        <a href="../../../../../../plan/" class="md-tabs__link">
           
   
     
@@ -216,13 +212,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../../" class="md-tabs__link">
           
   
     
@@ -242,7 +236,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../notes/" class="md-tabs__link">
+        <a href="../../../../../../notes/" class="md-tabs__link">
           
   
     
@@ -260,7 +254,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../projects/" class="md-tabs__link">
+      <a href="../../../../../../projects/" class="md-tabs__link">
         
   
     
@@ -277,7 +271,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../books/" class="md-tabs__link">
+      <a href="../../../../../../books/" class="md-tabs__link">
         
   
     
@@ -311,7 +305,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="Learn" class="md-nav__button md-logo" aria-label="Learn" data-md-component="logo">
+    <a href="../../../../../.." title="Learn" class="md-nav__button md-logo" aria-label="Learn" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -364,7 +358,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../plan/" class="md-nav__link ">
+            <a href="../../../../../../plan/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -397,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../plan/recommend/" class="md-nav__link">
+      <a href="../../../../../../plan/recommend/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -422,8 +416,6 @@
       
   
   
-    
-  
   
   
     
@@ -440,22 +432,19 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../../../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -466,13 +455,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Конспекты
@@ -485,10 +474,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -504,11 +491,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -522,7 +509,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Основные темы
@@ -588,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../git/what_is_git/" class="md-nav__link">
+      <a href="../../../../git/what_is_git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -609,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../git/install/" class="md-nav__link">
+      <a href="../../../../git/install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -630,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../git/base/" class="md-nav__link">
+      <a href="../../../../git/base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -651,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../git/branching/" class="md-nav__link">
+      <a href="../../../../git/branching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -672,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../git/tools/" class="md-nav__link">
+      <a href="../../../../git/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -693,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../git/patterns/" class="md-nav__link">
+      <a href="../../../../git/patterns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -766,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../oop/base/" class="md-nav__link">
+      <a href="../../../../oop/base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -787,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../oop/designing/" class="md-nav__link">
+      <a href="../../../../oop/designing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -813,10 +800,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -832,11 +817,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
@@ -850,7 +835,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2_3">
             <span class="md-nav__icon md-icon"></span>
             Чистый код
@@ -861,8 +846,6 @@
                 
   
   
-    
-  
   
   
     
@@ -876,11 +859,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_1" >
         
           
           <label class="md-nav__link" for="__nav_2_2_3_1" id="__nav_2_2_3_1_label" tabindex="0">
@@ -894,7 +877,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2_3_1">
             <span class="md-nav__icon md-icon"></span>
             Принципы
@@ -905,30 +888,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    SOLID
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../principce/solid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -937,71 +900,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#srp" class="md-nav__link">
-    <span class="md-ellipsis">
-      SRP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ocp" class="md-nav__link">
-    <span class="md-ellipsis">
-      OCP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lsp" class="md-nav__link">
-    <span class="md-ellipsis">
-      LSP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#isp" class="md-nav__link">
-    <span class="md-ellipsis">
-      ISP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dip" class="md-nav__link">
-    <span class="md-ellipsis">
-      DIP
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1022,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clean_code/cohesion_coupling/" class="md-nav__link">
+      <a href="../../../clean_code/cohesion_coupling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1043,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/patterns/" class="md-nav__link">
+      <a href="../../patterns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1128,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../web/general/" class="md-nav__link">
+      <a href="../../../../../web/general/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1170,7 +1068,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../web/html/" class="md-nav__link ">
+            <a href="../../../../../web/html/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1252,7 +1150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../web/css/base/" class="md-nav__link">
+      <a href="../../../../../web/css/base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1273,7 +1171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../web/css/flexbox/" class="md-nav__link">
+      <a href="../../../../../web/css/flexbox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1294,7 +1192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../web/css/grid/" class="md-nav__link">
+      <a href="../../../../../web/css/grid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1344,7 +1242,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../web/js/" class="md-nav__link ">
+            <a href="../../../../../web/js/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1418,7 +1316,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../notes/" class="md-nav__link ">
+            <a href="../../../../../../notes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1493,7 +1391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../notes/configs/python/" class="md-nav__link">
+      <a href="../../../../../../notes/configs/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1529,7 +1427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../projects/" class="md-nav__link">
+      <a href="../../../../../../projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1549,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../books/" class="md-nav__link">
+      <a href="../../../../../../books/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1589,45 +1487,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#srp" class="md-nav__link">
+  <a href="#назначение" class="md-nav__link">
     <span class="md-ellipsis">
-      SRP
+      Назначение
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ocp" class="md-nav__link">
+  <a href="#применение" class="md-nav__link">
     <span class="md-ellipsis">
-      OCP
+      Применение
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#lsp" class="md-nav__link">
+  <a href="#uml-диаграмма" class="md-nav__link">
     <span class="md-ellipsis">
-      LSP
+      UML диаграмма
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#isp" class="md-nav__link">
+  <a href="#результат" class="md-nav__link">
     <span class="md-ellipsis">
-      ISP
+      Результат
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dip" class="md-nav__link">
+  <a href="#пример-кода" class="md-nav__link">
     <span class="md-ellipsis">
-      DIP
+      Пример кода
     </span>
   </a>
   
@@ -1651,41 +1549,74 @@
   
 
 
-<h1 id="принцип-solid">Принцип SOLID<a class="headerlink" href="#принцип-solid" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Принцип применим не только к классам, но и к методам, функциям, модулям.</p>
-</div>
+<h1 id="синглтон-singleton">Синглтон (Singleton)<a class="headerlink" href="#синглтон-singleton" title="Permanent link">&para;</a></h1>
+<h2 id="назначение">Назначение<a class="headerlink" href="#назначение" title="Permanent link">&para;</a></h2>
+<p>Гарантирует, что у класса может быть только один экземпляр, и предоставляет глобальную точку доступа.</p>
+<h2 id="применение">Применение<a class="headerlink" href="#применение" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Single Responsibility Principle (SRP) — принцип единственной ответственности.</li>
-<li>Open-Closed Principle (OCP) — принцип открытости/закрытости.</li>
-<li>Liskov Substitution Principle (LSP) — принцип подстановки Барбары Лисков.</li>
-<li>Interface Segregation Principle (ISP) — принцип разделения интерфейса.</li>
-<li>Dependency Inversion Principle (DIP) — принцип инверсии зависимостей</li>
+<li>Должен существовать только один экземпляр некоторого класса, к которому может обратиться клиент через известную точку доступа;</li>
+<li>Единственный экземпляр должен расширяться путем порождения подклассов.</li>
 </ul>
-<h2 id="srp">SRP<a class="headerlink" href="#srp" title="Permanent link">&para;</a></h2>
-<p>Принцип единой ответственности гласит, что для внесения изменений в класс требуется только одна причина. Каждый модуль или класс должен нести ответственность за одну какую-либо часть функционала, и такая ответственность должна быть инкапсулирована в класс.</p>
-<p>Если класс отвечает за несколько операций сразу, вероятность возникновения багов возрастает - внося изменения, касающиеся одной из операций вы, сами того не подозревая, можете затронуть и другие.</p>
-<p>Принцип служит для разделения типов поведения, благодаря которому ошибки, вызванные модификациями в одном поведении, не распространялись на прочие, не связанные с ним типы.</p>
-<p><a class="glightbox" href="../images/solid/srp.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="srp" src="../images/solid/srp.png" /></a></p>
-<h2 id="ocp">OCP<a class="headerlink" href="#ocp" title="Permanent link">&para;</a></h2>
-<p>Классы должны быть открыты для расширения, но закрыты для модификации. Принцип открытости/закрытости заключается в том, что следует расширять код с помощью подклассов так, чтобы изначальный класс не требовал правок.</p>
-<p>Принцип служит для того, чтобы делать поведение класса более разнообразным, не вмешиваясь в текущие операции, которые он выполняет. Благодаря этому вы избегаете ошибок в тех фрагментах кода, где задействован этот класс.</p>
-<p><a class="glightbox" href="../images/solid/ocp.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ocp" src="../images/solid/ocp.png" /></a></p>
-<h2 id="lsp">LSP<a class="headerlink" href="#lsp" title="Permanent link">&para;</a></h2>
-<p>Этот принцип гласит, что проектирование должно предусматривать возможность замены любого экземпляра родительского класса любым экземпляром дочернего. Таким образом, все что умеет делать родительский класс, должен уметь делать дочерний класс.</p>
-<p>В случаях, когда класс-потомок не способен выполнять те же действия, что и класс-родитель, возникает риск появления ошибок.</p>
-<p>Принцип служит для того, чтобы обеспечить постоянство: класс-родитель и класс-потомок могут использоваться одинаковым образом без нарушения работы программы.</p>
-<p><a class="glightbox" href="../images/solid/lsp.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="lsp" src="../images/solid/lsp.png" /></a></p>
-<h2 id="isp">ISP<a class="headerlink" href="#isp" title="Permanent link">&para;</a></h2>
-<p>Принцип гласит, что лучше создавать много маленьких интерфейсов, чем несколько больших.</p>
-<p>Класс должен производить только те операции, которые необходимы для осуществления его функций. Все другие действия следует либо удалить совсем, либо переместить, если есть вероятность, что они понадобятся другому классу в будущем.</p>
-<p>Принцип служит для того, чтобы раздробить единый набор действий на ряд наборов поменьше - таким образом, каждый класс делает то, что от него действительно требуется, и ничего больше.</p>
-<p><a class="glightbox" href="../images/solid/isp.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="isp" src="../images/solid/isp.png" /></a></p>
-<h2 id="dip">DIP<a class="headerlink" href="#dip" title="Permanent link">&para;</a></h2>
-<p>Модули верхнего уровня не должны зависеть от модулей нижнего уровня. И те, и другие должны зависеть от абстракции. Абстракции не должны зависеть от деталей. Детали должны зависеть от абстракций.</p>
-<p>Этот принцип служит для того, чтобы устранить зависимость классов верхнего уровня от классов нижнего уровня за счёт введения интерфейсов.</p>
-<p><a class="glightbox" href="../images/solid/dip.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="dip" src="../images/solid/dip.png" /></a></p>
+<h2 id="uml-диаграмма">UML диаграмма<a class="headerlink" href="#uml-диаграмма" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>classDiagram
+    direction RL
+
+    class Singleton{
+        static instance()
+        SingletonOperation()
+        GetSingletonData()
+
+        static instance
+    }</code></pre>
+<p>Описание сущностей:</p>
+<ul>
+<li>
+<p><em>Singleton</em> - Одиночка:</p>
+<ul>
+<li>Определяет операцию <code>Instance (метод класса)</code>, дающая доступ к единственному экземпляру;</li>
+<li>Несет ответственность за создание собственного экземпляра.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Доступ к экземпляру осуществляется только через операцию <code>Instance</code></p>
+</div>
+<h2 id="результат">Результат<a class="headerlink" href="#результат" title="Permanent link">&para;</a></h2>
+<p>Одиночка:</p>
+<ul>
+<li>Контролирует доступ к единственному экземпляру;</li>
+<li>Сокращает пространство имен, позволяя избежать засорения пространства имен глобальными переменными;</li>
+<li>Возможность уточнения операции и представления;</li>
+<li>Возможность использование переменного числа экземпляров.</li>
+</ul>
+<h2 id="пример-кода">Пример кода<a class="headerlink" href="#пример-кода" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">class</span> <span class="nc">Singleton</span><span class="p">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Реализация Singleton&quot;&quot;&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">_instances</span><span class="p">:</span> <span class="n">Singleton</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instances</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            <span class="bp">cls</span><span class="o">.</span><span class="n">_instances</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instances</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">s1</span> <span class="o">=</span> <span class="n">Singleton</span><span class="p">()</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">s2</span> <span class="o">=</span> <span class="n">Singleton</span><span class="p">()</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span> <span class="ow">is</span> <span class="n">s2</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 
 
 
@@ -1795,18 +1726,18 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "content.code.copy", "content.code.annotate", "content.code.select", "content.tabs.link"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "content.code.copy", "content.code.annotate", "content.code.select", "content.tabs.link"], "search": "../../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../../../../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
-        <script src="../../../../../js/mathjax.js"></script>
+        <script src="../../../../../../js/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../../../termynal.js"></script>
+        <script src="../../../../../../termynal.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
