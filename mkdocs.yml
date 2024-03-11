@@ -1,9 +1,9 @@
 site_name: Learn
 site_url: http://127.0.0.1:8000
 repo_name: Learn
-repo_url: https://github.com/NetoGeek/PlanLearn
+repo_url: https://github.com/neyakki/Learn
 edit_uri: edit/edit_branch/docs/
-copyright: NetoGeek
+copyright: Neyakki
 
 nav:
   - План:
