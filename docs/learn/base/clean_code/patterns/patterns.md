@@ -19,11 +19,11 @@
 
 Отсюда можно сделать вывод, порождающие паттерны обеспечивают большую гибкость в отношении того, что создается, кто создает, как и когда.
 
--   [Абстрактная фабрика](generative/abstract_factory.md);
--   [Строитель](generative/builder.md);
--   [Фабричный метод](generative/factory_method.md);
--   [Прототип](generative/prototype.md);
--   [Синглтон](generative/singleton.md);
+-   [Абстрактная фабрика](creational/abstract_factory.md);
+-   [Строитель](creational/builder.md);
+-   [Фабричный метод](creational/factory_method.md);
+-   [Прототип](creational/prototype.md);
+-   [Синглтон](creational/singleton.md);
 
 ### Структурные паттерны
 
