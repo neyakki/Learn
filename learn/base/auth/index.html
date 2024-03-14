@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="http://127.0.0.1:8000/learn/base/git/install/">
+        <link rel="canonical" href="http://127.0.0.1:8000/learn/base/auth/">
       
       
-        <link rel="prev" href="../what_is_git/">
+        <link rel="prev" href="../clean_code/patterns/patterns/">
       
       
-        <link rel="next" href="../base/">
+        <link rel="next" href="../../web/general/">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
-        <title>Установка - Learn</title>
+        <title>Авторизация и аутентификация - Learn</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f2e4d321.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f2e4d321.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,16 +48,16 @@
       
     
     
-      <link rel="stylesheet" href="../../../../termynal.css">
+      <link rel="stylesheet" href="../../../termynal.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -66,7 +66,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#установка-и-настройка-git-linux" class="md-skip">
+        <a href="#авторизация-и-аутентификация" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -97,7 +97,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="../../../.." title="Learn" class="md-header__button md-logo" aria-label="Learn" data-md-component="logo">
+    <a href="../../.." title="Learn" class="md-header__button md-logo" aria-label="Learn" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Установка
+              Авторизация и аутентификация
             
           </span>
         </div>
@@ -200,7 +200,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../plan/" class="md-tabs__link">
+        <a href="../../../plan/" class="md-tabs__link">
           
   
     
@@ -222,7 +222,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -242,7 +242,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../notes/" class="md-tabs__link">
+        <a href="../../../notes/" class="md-tabs__link">
           
   
     
@@ -260,7 +260,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../projects/" class="md-tabs__link">
+      <a href="../../../projects/" class="md-tabs__link">
         
   
     
@@ -277,7 +277,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../books/" class="md-tabs__link">
+      <a href="../../../books/" class="md-tabs__link">
         
   
     
@@ -311,7 +311,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Learn" class="md-nav__button md-logo" aria-label="Learn" data-md-component="logo">
+    <a href="../../.." title="Learn" class="md-nav__button md-logo" aria-label="Learn" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -364,7 +364,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../plan/" class="md-nav__link ">
+            <a href="../../../plan/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -397,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../plan/recommend/" class="md-nav__link">
+      <a href="../../../plan/recommend/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -455,7 +455,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -535,10 +535,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -560,11 +558,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
         
           
           <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
@@ -578,7 +576,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2_1">
             <span class="md-nav__icon md-icon"></span>
             Git
@@ -592,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../what_is_git/" class="md-nav__link">
+      <a href="../git/what_is_git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -610,19 +608,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../git/install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -631,7 +620,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -644,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../base/" class="md-nav__link">
+      <a href="../git/base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -665,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../branching/" class="md-nav__link">
+      <a href="../git/branching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -686,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/" class="md-nav__link">
+      <a href="../git/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -707,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/" class="md-nav__link">
+      <a href="../git/patterns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -780,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../oop/base/" class="md-nav__link">
+      <a href="../oop/base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -801,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../oop/designing/" class="md-nav__link">
+      <a href="../oop/designing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -920,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clean_code/clean_code/clean_code/" class="md-nav__link">
+      <a href="../clean_code/clean_code/clean_code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -991,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clean_code/principce/solid/" class="md-nav__link">
+      <a href="../clean_code/principce/solid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1020,7 +1008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clean_code/clean_code/cohesion_coupling/" class="md-nav__link">
+      <a href="../clean_code/clean_code/cohesion_coupling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1041,7 +1029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clean_code/patterns/patterns/" class="md-nav__link">
+      <a href="../clean_code/patterns/patterns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1067,6 +1055,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1082,16 +1072,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../auth/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -1103,7 +1093,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2_4">
             <span class="md-nav__icon md-icon"></span>
             Авторизация и аутентификация
@@ -1183,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../web/general/" class="md-nav__link">
+      <a href="../../web/general/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1225,7 +1215,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../web/html/" class="md-nav__link ">
+            <a href="../../web/html/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1307,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../web/css/base/" class="md-nav__link">
+      <a href="../../web/css/base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1328,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../web/css/flexbox/" class="md-nav__link">
+      <a href="../../web/css/flexbox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1349,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../web/css/grid/" class="md-nav__link">
+      <a href="../../web/css/grid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1399,7 +1389,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../web/js/" class="md-nav__link ">
+            <a href="../../web/js/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1473,7 +1463,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../notes/" class="md-nav__link ">
+            <a href="../../../notes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1548,7 +1538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../notes/configs/python/" class="md-nav__link">
+      <a href="../../../notes/configs/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1584,7 +1574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../projects/" class="md-nav__link">
+      <a href="../../../projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1604,7 +1594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../books/" class="md-nav__link">
+      <a href="../../../books/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1653,77 +1643,19 @@
   
 
 
-<h1 id="установка-и-настройка-git-linux">Установка и настройка Git (Linux)<a class="headerlink" href="#установка-и-настройка-git-linux" title="Permanent link">&para;</a></h1>
-<p>Установка Git выполняется с помощью пакетного менеджера</p>
+<h1 id="авторизация-и-аутентификация">Авторизация и аутентификация<a class="headerlink" href="#авторизация-и-аутентификация" title="Permanent link">&para;</a></h1>
+<p>Обычно процедура входа разбита на несколько простейших шагов:</p>
 <ul>
-<li>Debian, Ubuntu: <code>sudo apt install git</code></li>
-<li>Fedora: <code>sudo dnf install git-all</code></li>
+<li>Идентификация пользователя;</li>
+<li>Аутентификация пользователя;</li>
+<li>Авторизация пользователя.</li>
 </ul>
-<p>Также Git можно установить из исходников, в таком случае мы получаем более свежую версию. Для этого нужно выполнить
-следующие инструкции:</p>
-<ul>
-<li>Устанавливаем зависимости для сборки:</li>
-</ul>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>dh-autoreconf<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>libcurl4-gnutls-dev<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>libexpat1-dev<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span>gettext<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>libz-dev<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span>libssl-dev<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span>install-info
-</code></pre></div>
-<ul>
-<li>Для сборки документации в различных форматах:</li>
-</ul>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>asciidoc<span class="w"> </span>xmlto<span class="w"> </span>docbook2x
-</code></pre></div>
-<ul>
-<li>Т.к. имена бинарных файлов могут отличаться выполняем следующий шаг:</li>
-</ul>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/usr/bin/db2x_docbook2texi<span class="w"> </span>/usr/bin/docbook2x-texi
-</code></pre></div>
-<ul>
-<li>Теперь мы можем скачать архив с исходниками:</li>
-</ul>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>curl<span class="w"> </span>-o<span class="w"> </span>git.tar.gz<span class="w"> </span>https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.43.0.tar.gz
-</code></pre></div>
-<ul>
-<li>Разархивируем в текущий каталог:</li>
-</ul>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>tar<span class="w"> </span>-zxf<span class="w"> </span>git.tar.gz
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>git-2.43.0
-</code></pre></div>
-<ul>
-<li>Выполняем сборку и компиляцию:</li>
-</ul>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>make<span class="w"> </span>configure
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>./configure<span class="w"> </span>--prefix<span class="o">=</span>/usr
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>$<span class="w"> </span>make<span class="w"> </span>all<span class="w"> </span>doc<span class="w"> </span>info
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>$<span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>install<span class="w"> </span>install-doc<span class="w"> </span>install-html<span class="w"> </span>install-info
-</code></pre></div>
-<p>Базовые настройки:</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;NetoGeek&quot;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;wion272@gmail.com&quot;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.defaultBranch<span class="w"> </span>master
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span>vim
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.autocrlf<span class="w"> </span>input
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>color.ui<span class="w"> </span><span class="nb">true</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.hist<span class="w"> </span><span class="s1">&#39;log --pretty=format:&quot;%C(cyan)%h%Creset %C(red)%an%Creset %ad %ar - %C(magenta)%s%Creset %d&quot; --graph --abbrev-commit --date=format:&quot;%d-%m-%Y&quot;&#39;</span>
-</code></pre></div>
-<p>Алиас позволяет добавить сокращение к большой или часто выполняемой команде</p>
-<div class="admonition note">
-<p class="admonition-title">Git хранит настройки в трех местах.</p>
-<ol>
-<li>/etc/gitconfig - git config --system</li>
-<li>.gitconfig - git config --global</li>
-<li>.git/config - git config --local</li>
-</ol>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Скачать</p>
-</div>
-<p>https://raw.githubusercontent.com/git/git/v2.43.0/contrib/completion/git-completion.bash</p>
+<p>Идентификация - процедура, в результате которой происходит выявления идентификатора, явно определяющего пользователя в информационной системе.</p>
+<p>Аутентификация - процедура проверки пользователя, например путем сравнения введенного пароля с паролем в БД.</p>
+<p>Авторизация - предоставление пользователю прав на выполнение определенных действий.</p>
+<p>Аутентификация без идентификации не имеет смысла, как можно проверять неизвестно кого.</p>
+<p>Идентификации без аутентификации также не возможна, мало ли кто ввел логин, нужно быть уверенными что кто ввел логин действительно тот за кого себя выдает.</p>
+<p>А авторизация возможна и без идентификации и аутентификации. Например, Google Документах можно создать документ с открытым доступом.</p>
 
 
 
@@ -1833,18 +1765,18 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "content.code.copy", "content.code.annotate", "content.code.select", "content.tabs.link"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "content.code.copy", "content.code.annotate", "content.code.select", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
-        <script src="../../../../js/mathjax.js"></script>
+        <script src="../../../js/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../../termynal.js"></script>
+        <script src="../../../termynal.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
