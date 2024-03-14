@@ -23,10 +23,14 @@ nav:
               - Введение в ООП: learn/base/oop/base.md
               - Проектирование: learn/base/oop/designing.md
           - Чистый код:
+              - Правила:
+                  - Общие: learn/base/clean_code/clean_code/clean_code.md
               - Принципы:
                   - SOLID: learn/base/clean_code/principce/solid.md
               - Cohesion и coupling: learn/base/clean_code/clean_code/cohesion_coupling.md
               - Паттерны: learn/base/clean_code/patterns/patterns.md
+          - Авторизация и аутентификация:
+              - learn/base/auth/index.md
       - Web:
           - Общее: learn/web/general.md
           - HTML:
