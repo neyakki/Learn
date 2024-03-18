@@ -8,28 +8,24 @@
       
       
       
-        <link rel="canonical" href="http://127.0.0.1:8000/learn/base/clean_code/patterns/patterns/">
+        <link rel="canonical" href="http://127.0.0.1:8000/learn/base/clean_code/patterns/structural/composite/">
       
       
-        <link rel="prev" href="../../clean_code/cohesion_coupling/">
       
       
-        <link rel="next" href="../../../auth/">
-      
-      
-      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
-        <title>Паттерны - Learn</title>
+        <title>Компоновщик (Composite) - Learn</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.f2e4d321.min.css">
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.f2e4d321.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,16 +44,16 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../termynal.css">
+      <link rel="stylesheet" href="../../../../../../termynal.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -66,7 +62,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -83,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#паттерны" class="md-skip">
+        <a href="#компоновщик-composite" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -97,7 +93,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="../../../../.." title="Learn" class="md-header__button md-logo" aria-label="Learn" data-md-component="logo">
+    <a href="../../../../../.." title="Learn" class="md-header__button md-logo" aria-label="Learn" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -117,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Паттерны
+              Компоновщик (Composite)
             
           </span>
         </div>
@@ -200,7 +196,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../plan/" class="md-tabs__link">
+        <a href="../../../../../../plan/" class="md-tabs__link">
           
   
     
@@ -216,13 +212,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../../" class="md-tabs__link">
           
   
     
@@ -242,7 +236,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../notes/" class="md-tabs__link">
+        <a href="../../../../../../notes/" class="md-tabs__link">
           
   
     
@@ -260,7 +254,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../projects/" class="md-tabs__link">
+      <a href="../../../../../../projects/" class="md-tabs__link">
         
   
     
@@ -277,7 +271,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../books/" class="md-tabs__link">
+      <a href="../../../../../../books/" class="md-tabs__link">
         
   
     
@@ -311,7 +305,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="Learn" class="md-nav__button md-logo" aria-label="Learn" data-md-component="logo">
+    <a href="../../../../../.." title="Learn" class="md-nav__button md-logo" aria-label="Learn" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -364,7 +358,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../plan/" class="md-nav__link ">
+            <a href="../../../../../../plan/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -397,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../plan/recommend/" class="md-nav__link">
+      <a href="../../../../../../plan/recommend/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -422,8 +416,6 @@
       
   
   
-    
-  
   
   
     
@@ -440,22 +432,19 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../../../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -466,13 +455,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Конспекты
@@ -485,10 +474,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -506,11 +493,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -524,7 +511,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Основные темы
@@ -590,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../git/what_is_git/" class="md-nav__link">
+      <a href="../../../../git/what_is_git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -611,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../git/install/" class="md-nav__link">
+      <a href="../../../../git/install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -632,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../git/base/" class="md-nav__link">
+      <a href="../../../../git/base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -653,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../git/branching/" class="md-nav__link">
+      <a href="../../../../git/branching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -674,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../git/tools/" class="md-nav__link">
+      <a href="../../../../git/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -695,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../git/patterns/" class="md-nav__link">
+      <a href="../../../../git/patterns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -768,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../oop/base/" class="md-nav__link">
+      <a href="../../../../oop/base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -789,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../oop/designing/" class="md-nav__link">
+      <a href="../../../../oop/designing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -815,10 +802,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -836,11 +821,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
@@ -854,7 +839,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2_3">
             <span class="md-nav__icon md-icon"></span>
             Чистый код
@@ -910,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clean_code/clean_code/" class="md-nav__link">
+      <a href="../../../clean_code/clean_code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -981,7 +966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../principce/solid/" class="md-nav__link">
+      <a href="../../../principce/solid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1010,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clean_code/cohesion_coupling/" class="md-nav__link">
+      <a href="../../../clean_code/cohesion_coupling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1028,30 +1013,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Паттерны
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../patterns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1060,59 +1025,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#паттерны-ооп" class="md-nav__link">
-    <span class="md-ellipsis">
-      Паттерны ООП
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Паттерны ООП">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#порождающие-паттерны" class="md-nav__link">
-    <span class="md-ellipsis">
-      Порождающие паттерны
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#структурные-паттерны" class="md-nav__link">
-    <span class="md-ellipsis">
-      Структурные паттерны
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1154,7 +1066,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../auth/" class="md-nav__link ">
+            <a href="../../../../auth/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1246,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../web/general/" class="md-nav__link">
+      <a href="../../../../../web/general/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1288,7 +1200,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../web/html/" class="md-nav__link ">
+            <a href="../../../../../web/html/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1370,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../web/css/base/" class="md-nav__link">
+      <a href="../../../../../web/css/base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1391,7 +1303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../web/css/flexbox/" class="md-nav__link">
+      <a href="../../../../../web/css/flexbox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1412,7 +1324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../web/css/grid/" class="md-nav__link">
+      <a href="../../../../../web/css/grid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1462,7 +1374,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../web/js/" class="md-nav__link ">
+            <a href="../../../../../web/js/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1536,7 +1448,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../notes/" class="md-nav__link ">
+            <a href="../../../../../../notes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1611,7 +1523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../notes/configs/python/" class="md-nav__link">
+      <a href="../../../../../../notes/configs/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1647,7 +1559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../projects/" class="md-nav__link">
+      <a href="../../../../../../projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1667,7 +1579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../books/" class="md-nav__link">
+      <a href="../../../../../../books/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1707,35 +1619,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#паттерны-ооп" class="md-nav__link">
+  <a href="#назначение" class="md-nav__link">
     <span class="md-ellipsis">
-      Паттерны ООП
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Паттерны ООП">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#порождающие-паттерны" class="md-nav__link">
-    <span class="md-ellipsis">
-      Порождающие паттерны
+      Назначение
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#структурные-паттерны" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#пример" class="md-nav__link">
     <span class="md-ellipsis">
-      Структурные паттерны
+      Пример
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#применение" class="md-nav__link">
+    <span class="md-ellipsis">
+      Применение
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uml-диаграмма" class="md-nav__link">
+    <span class="md-ellipsis">
+      UML диаграмма
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#результат" class="md-nav__link">
+    <span class="md-ellipsis">
+      Результат
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#пример-кода" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример кода
+    </span>
+  </a>
   
 </li>
       
@@ -1757,35 +1690,183 @@
   
 
 
-<h1 id="паттерны">Паттерны<a class="headerlink" href="#паттерны" title="Permanent link">&para;</a></h1>
-<p>Паттерн - повторяющийся шаблон.</p>
-<h2 id="паттерны-ооп">Паттерны ООП<a class="headerlink" href="#паттерны-ооп" title="Permanent link">&para;</a></h2>
-<h3 id="порождающие-паттерны">Порождающие паттерны<a class="headerlink" href="#порождающие-паттерны" title="Permanent link">&para;</a></h3>
-<p>Паттерны этой категории абстрагируют процесс создания экземпляров.</p>
-<p>Паттерн, порождающий классы, использует наследование, чтобы варьировать класс создаваемого экземпляра.</p>
-<p>Паттерн, порождающий объекты, делегирует создание экземпляров другому объекту.</p>
-<p>Для таких паттернов характерны два аспекта:</p>
+<h1 id="компоновщик-composite">Компоновщик (Composite)<a class="headerlink" href="#компоновщик-composite" title="Permanent link">&para;</a></h1>
+<h2 id="назначение">Назначение<a class="headerlink" href="#назначение" title="Permanent link">&para;</a></h2>
+<p>Компонует объекты в древовидные структуры для представления иерархии "часть-целое". Позволяет клиенту трактовать
+индивидуальные и составные объекты.</p>
+<h2 id="пример">Пример<a class="headerlink" href="#пример" title="Permanent link">&para;</a></h2>
+<p>Пример из реальной жизни:</p>
+<blockquote>
+Каждое предложение состоит из слов, которые, в свою очередь, состоят из символов. Каждый из объектов можно распечатать,
+и что-то может быть напечатано до или после них, например предложение всегда заканчивается точкой, и перед словом всегда
+есть пробел.
+</blockquote>
+
+<p>Другими словами:</p>
+<blockquote>
+Позволяет клиентам единообразно обрабатывать отдельные объекты.
+</blockquote>
+
+<h2 id="применение">Применение<a class="headerlink" href="#применение" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Они инкапсулируют знания о конкретных классах, которые применяются в системе;</li>
-<li>Они скрывают подробности создания и компоновки экземпляров этих классов. Единственное что известно - интерфейсы этих классов.</li>
+<li>требуется представить иерархию объектов вида "часть-целое";</li>
+<li>клиенты должны работать с составными и индивидуальными объектами по одинаковым правилам.</li>
 </ul>
-<p>Отсюда можно сделать вывод, порождающие паттерны обеспечивают большую гибкость в отношении того, что создается, кто создает, как и когда.</p>
+<h2 id="uml-диаграмма">UML диаграмма<a class="headerlink" href="#uml-диаграмма" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>classDiagram
+    direction LR
+
+    class Client
+
+    class Component {
+        operation()
+        add(component: Component)
+        remove(component: Component)
+        getChild(int) Component
+    }
+    &lt;&lt;interface&gt;&gt; Component
+
+    class Leaf {
+        operation()
+    }
+
+    class Composite {
+        operation()
+        add(component: Component)
+        remove(component: Component)
+        getChild(int) Component
+    }
+
+    Client --&gt; Component
+    Composite *--&gt; Component: composition
+    Component &lt;|.. Leaf: implementation
+    Component &lt;|.. Composite: implementation</code></pre>
+<p>Описание сущностей:</p>
 <ul>
-<li><a href="../creational/abstract_factory/">Абстрактная фабрика</a>;</li>
-<li><a href="../creational/builder/">Строитель</a>;</li>
-<li><a href="../creational/factory_method/">Фабричный метод</a>;</li>
-<li><a href="../creational/prototype/">Прототип</a>;</li>
-<li><a href="../creational/singleton/">Синглтон</a>;</li>
+<li><em>Component</em> - Объявляет интерфейс для компонуемых объектов;</li>
+<li><em>Leaf</em> - Листовой узел компонента;</li>
+<li><em>Composite</em> - Составной объект компонента;</li>
 </ul>
-<h3 id="структурные-паттерны">Структурные паттерны<a class="headerlink" href="#структурные-паттерны" title="Permanent link">&para;</a></h3>
-<p>Структурные паттерны рассматривают вопрос о том, как из классов и объектов создается более крупная структура.</p>
-<p>Структурные паттерны уровня класса используют наследование для составления композиций из интерфейсов и реализации.</p>
-<p>Структурные паттерны уровня объекта компонуют объекты для получения новой функциональности.</p>
+<h2 id="результат">Результат<a class="headerlink" href="#результат" title="Permanent link">&para;</a></h2>
+<p>Компоновщик:</p>
 <ul>
-<li><a href="../structural/adapter/">Адаптер</a>;</li>
-<li><a href="../structural/bridge/">Мост</a>;</li>
-<li><a href="../structural/composite/">Компоновщик</a>;</li>
+<li>Определяет иерархии классов, состоящие из примитивных и составных объектов;</li>
+<li>Упрощает архитектуру клиента;</li>
+<li>Облегчает добавление новых видов компонентов;</li>
+<li>Способствует созданию общего дизайна</li>
 </ul>
+<h2 id="пример-кода">Пример кода<a class="headerlink" href="#пример-кода" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">class</span> <span class="nc">Unit</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="sd">    Абстрактный компонент, в данном случае это - отряд (отряд может</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="sd">    состоять из одного солдата или более)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="nd">@abstractmethod</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="sd">        Вывод данных о компоненте</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        <span class="k">pass</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="n">Unit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="sd">        Добавление нового компонента в иерархию</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="sd">        :param unit: Компонент</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="n">Unit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="sd">        Удаление компонента из иерархию</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="sd">        :param unit: Компонент</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    <span class="k">def</span> <span class="nf">get_children</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Unit</span><span class="p">]:</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="sd">        Вернуть список дочерних элементов</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="k">class</span> <span class="nc">Archer</span><span class="p">(</span><span class="n">Unit</span><span class="p">):</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Лучник&quot;&quot;&quot;</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="k">class</span> <span class="nc">Knight</span><span class="p">(</span><span class="n">Unit</span><span class="p">):</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Рыцарь&quot;&quot;&quot;</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="k">class</span> <span class="nc">Swordsman</span><span class="p">(</span><span class="n">Unit</span><span class="p">):</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Мечник&quot;&quot;&quot;</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="k">class</span> <span class="nc">Squad</span><span class="p">(</span><span class="n">Unit</span><span class="p">):</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a><span class="sd">    Компоновщик - отряд, состоящий более чем из одного человека. Также</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="sd">    может включать в себя другие отряды-компоновщики.</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>
+<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_units</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>
+<a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Отряд </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">()</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>        <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_units</span><span class="p">:</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>
+<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="n">Unit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a><span class="sd">        Добавление нового отряда</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>
+<a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a><span class="sd">        :param unit: отряд (может быть как базовым, так и компоновщиком)</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_units</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s2"> присоединился к отряду </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>
+<a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="n">Unit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a><span class="sd">        Удаление отряда из текущего компоновщика</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a>
+<a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a><span class="sd">        :param unit: объект отряда</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a>        <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_units</span><span class="p">:</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a>            <span class="k">if</span> <span class="n">u</span> <span class="o">==</span> <span class="n">unit</span><span class="p">:</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">_units</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a>                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2"> покинул отряд </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>                <span class="k">break</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s2"> в отряде </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">()</span><span class="si">}</span><span class="s2"> не найден&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a>
+<a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a>    <span class="k">def</span> <span class="nf">get_children</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Unit</span><span class="p">]:</span>
+<a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_units</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 
 
 
@@ -1895,18 +1976,18 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "content.code.copy", "content.code.annotate", "content.code.select", "content.tabs.link"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "content.code.copy", "content.code.annotate", "content.code.select", "content.tabs.link"], "search": "../../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../../../../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
-        <script src="../../../../../js/mathjax.js"></script>
+        <script src="../../../../../../js/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../../../termynal.js"></script>
+        <script src="../../../../../../termynal.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

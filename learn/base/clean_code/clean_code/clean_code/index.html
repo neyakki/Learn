@@ -963,6 +963,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#переменные" class="md-nav__link">
+    <span class="md-ellipsis">
+      Переменные
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#классы" class="md-nav__link">
     <span class="md-ellipsis">
       Классы
@@ -1751,6 +1760,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#переменные" class="md-nav__link">
+    <span class="md-ellipsis">
+      Переменные
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#классы" class="md-nav__link">
     <span class="md-ellipsis">
       Классы
@@ -1893,6 +1911,25 @@
 <p>Используйте термины из области информатики: названия алгоритмов, паттернов и т.д.</p>
 <p>Используйте имена из предметной области.</p>
 <p>Имена следует помещать в определенный контекст, например, в классы, функции и т.д.</p>
+<p>Если переменная цикла планируется использоваться вне цикла, то ей надо дать осмысленное имя. Если имеется несколько вложенных циклов, то им надо дать более длинное имя.</p>
+<h2 id="переменные">Переменные<a class="headerlink" href="#переменные" title="Permanent link">&para;</a></h2>
+<p>Неверная инициализация - один из самых больших источников ошибок.</p>
+<p>Инициализация переменных при их объявлении - простая методика защитного программирования.</p>
+<p>Инициализировать каждую переменную как можно ближе к месту первого ее использования.</p>
+<p>В идеальном случае нужно сразу объявлять и определять каждую переменную непосредственно перед первым обращении.</p>
+<p>Область видимости - фрагмент, в котором переменная известна и может быть использована. Код расположенный между обращением к переменной, является "окном уязвимости". Оценка степени сгруппированности обращений к переменной является определение "интервала" между обращениями.</p>
+<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Интервал - 2. Т.к. между первым обращением к ней находится две строки.</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Интервал - 1</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Интервал - 0</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+</code></pre></div>
+<p>С этим определением тесно связано другое - Время жизни переменной. Жизнь переменной начинается при первом обращении к ней, а заканчивается при последнем. Время жизни нужно делать как можно короче.</p>
+<p>Время жизни считается по следующему алгоритму: если переменная вызывается в строке 1, а в последний - в 25, то время жизни 25 строк. Если переменная вызывается только в этих двух строках, то средний интервал равен 23. Если бы переменная вызывалась во всех строках, то время жизни было равно 0.</p>
+<p>Короткое время жизни снижает вероятность ошибки. Также короткое время жизни облегчает разделение крупного метода на мелкие.</p>
+<p>Создание уникальных переменных для каждой цели делает код понятнее.</p>
+<p>Избегайте переменных, имеющих скрытый смысл.</p>
+<p>Относитесь к временным переменным с подозрением.</p>
 <h2 id="классы">Классы<a class="headerlink" href="#классы" title="Permanent link">&para;</a></h2>
 <p>Класс - набор данных и методов, имеющих общую, хорошо определенную зону ответственности.</p>
 <p>Класс должен начинаться со списка переменных:</p>
@@ -1960,31 +1997,31 @@
 <p>Функция должна делать только то, что она обещает и ничего больше.</p>
 <p>Если функция должна изменять чье-то состояние, то это должно быть состояние своего владельца.</p>
 <p>Функция должна что-то делать или отвечать на вопрос, но не одновременно.</p>
-<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Плохо</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Лучше</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">def</span> <span class="nf">is_exists</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">def</span> <span class="nf">set_attr</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Плохо</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># Лучше</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">def</span> <span class="nf">is_exists</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="k">def</span> <span class="nf">set_attr</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
 </code></pre></div>
 <p>Обработка ошибок - одна операция, поэтому ее следует выделять в отдельную функцию.</p>
 <p>Если функция остается компактной, то добавление <code>return</code>, <code>break</code>, <code>continue</code> не принесет вреда, а возможно сделает код
 более выразительным.</p>
 <p>Временные привязки не должны скрываться. Каждая функция передает результат следующей, тем самым не получится нарушить
 порядок выполнения.</p>
-<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Плохо</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">saturate_gradient</span><span class="p">()</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">retriculate_splines</span><span class="p">()</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">dive_for_moog</span><span class="p">()</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Лучше</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">gradient</span> <span class="o">=</span> <span class="n">saturate_gradient</span><span class="p">()</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">splines</span> <span class="o">=</span> <span class="n">retriculate_splines</span><span class="p">(</span><span class="n">gradient</span><span class="p">)</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="n">dive_for_moog</span><span class="p">(</span><span class="n">splines</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Плохо</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">saturate_gradient</span><span class="p">()</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">retriculate_splines</span><span class="p">()</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">dive_for_moog</span><span class="p">()</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># Лучше</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">gradient</span> <span class="o">=</span> <span class="n">saturate_gradient</span><span class="p">()</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">splines</span> <span class="o">=</span> <span class="n">retriculate_splines</span><span class="p">(</span><span class="n">gradient</span><span class="p">)</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">dive_for_moog</span><span class="p">(</span><span class="n">splines</span><span class="p">)</span>
 </code></pre></div>
 <p>Важная причина создания методов - снижение сложности программы. Метод создается для сокрытия информации, чтобы о ней не думать. Одним из признаков разделения методов является глубокая вложенность.</p>
 <p>Также создание методов позволяет сократить дублирование кода и снизить уровень ошибок.</p>
@@ -2002,7 +2039,7 @@
 <li>Временная - методы объединены, т.к. выполняются в один момент времени;</li>
 <li>Процедурная - методы выполняются в определенном порядке;</li>
 <li>Логическая - выполнение операции зависит от управляющего флага. Считается удачным если роль метода состоит только в координации выполнения команд (Обработчик событий);</li>
-<li>Случайная - между операциями нет какой либо связи</li>
+<li>Случайная - между операциями нет какой либо связи.</li>
 </ul>
 <p>Все передаваемые аргументы должны использоваться при выполнении метода.</p>
 <p>Не стоит использовать передаваемые параметры как рабочие переменные.</p>
@@ -2046,46 +2083,61 @@
 <p>Концепции, связанные друг с другом, должны находиться рядом.</p>
 <p>Переменные следует объявлять как можно ближе к месту использования.</p>
 <p>Пример:</p>
-<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">run</span> <span class="o">=</span> <span class="kc">True</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">while</span> <span class="n">run</span><span class="p">:</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="o">...</span>
+<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">run</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">while</span> <span class="n">run</span><span class="p">:</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="o">...</span>
 </code></pre></div>
 <p>Переменные экземпляра, должны объявляться в начале класса.</p>
 <p>Пример:</p>
-<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">class</span> <span class="nc">Test</span><span class="p">:</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">test</span> <span class="o">=</span> <span class="n">test</span>
+<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">class</span> <span class="nc">Test</span><span class="p">:</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">test</span> <span class="o">=</span> <span class="n">test</span>
 </code></pre></div>
 <p>Зависимые функции должны располагаться рядом друг с другом, вызывающая функции должна находиться над вызываемой.</p>
 <p>Идеальный размер горизонтального форматирование - 120 символов.</p>
 <h2 id="обработка-ошибок">Обработка ошибок<a class="headerlink" href="#обработка-ошибок" title="Permanent link">&para;</a></h2>
+<p>Главная идея защитного программирования - передача некорректных данных методу не нарушают его работу.</p>
 <p>Обработка ошибок важна, но если она заслоняет собой логику программы, то она реализована не правильно.</p>
+<p>Если ошибка может быть обработана локально, там ее и обрабатывайте.</p>
+<p>Генерируемые исключения являются такой же частью интерфейса класса.</p>
 <p>Создавайте содержательное сообщение об ошибках и передавайте их со своими исключениями.</p>
 <p>Ошибки можно классифицировать по разным признакам: по источнику, по компоненту, сбои устройств и т.д.</p>
 <p>Если происходит перехват множества исключений и выполняется однотипное действие не зависимо от исключения, то можно создать обертку, возвращающая стандартное исключение:</p>
-<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">class</span> <span class="nc">CustomError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="k">pass</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        <span class="o">...</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="k">except</span> <span class="n">Exception1</span><span class="p">:</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        <span class="k">raise</span> <span class="n">CustomError</span><span class="p">()</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="k">except</span> <span class="n">Exception2</span><span class="p">:</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>        <span class="k">raise</span> <span class="n">CustomError</span><span class="p">()</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    <span class="k">except</span> <span class="n">Exception3</span><span class="p">:</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>        <span class="k">raise</span> <span class="n">CustomError</span><span class="p">()</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    <span class="k">except</span> <span class="n">Exception4</span><span class="p">:</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>        <span class="k">raise</span> <span class="n">CustomError</span><span class="p">()</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>    <span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>        <span class="n">wrapper</span><span class="p">()</span>
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    <span class="k">except</span> <span class="n">CustomError</span><span class="p">:</span>
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">class</span> <span class="nc">CustomError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="k">pass</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>        <span class="o">...</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="k">except</span> <span class="n">Exception1</span><span class="p">:</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>        <span class="k">raise</span> <span class="n">CustomError</span><span class="p">()</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="k">except</span> <span class="n">Exception2</span><span class="p">:</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>        <span class="k">raise</span> <span class="n">CustomError</span><span class="p">()</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    <span class="k">except</span> <span class="n">Exception3</span><span class="p">:</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>        <span class="k">raise</span> <span class="n">CustomError</span><span class="p">()</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    <span class="k">except</span> <span class="n">Exception4</span><span class="p">:</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>        <span class="k">raise</span> <span class="n">CustomError</span><span class="p">()</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>        <span class="n">wrapper</span><span class="p">()</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>    <span class="k">except</span> <span class="n">CustomError</span><span class="p">:</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>Инкапсулируя перехват ошибок в функцию, мы сокращаем зависимость от стороннего вызова.</p>
 <p>Паттерн "Особый случай" поваляет настраивать объект так, чтобы он обрабатывал особый случай, без использования обработки исключительного поведения в клиентском коде.</p>
+<p>Способы обработки ошибок:</p>
+<ul>
+<li>Вернуть нейтральное значение. Иногда лучшей реакцией на неправильные данные будет продолжение выполнения программы с возвратом безопасного значения;</li>
+<li>Вернуть следующие допустимые данные;</li>
+<li>Вернуть предыдущее известное значение;</li>
+<li>Вернуть ближайшее допустимое значение;</li>
+<li>Записать лог;</li>
+<li>Вызвать обработчик ошибок;</li>
+<li>Прекратить выполнение.</li>
+</ul>
+<p>Корректность - нельзя возвращать неточный результат, лучше не вернуть ничего.</p>
+<p>Устойчивость - требуется всегда пытаться сделать какое-то действиеЮ что позволит программе продолжить работы, даже если это приведет к неточным результатам.</p>
 <h2 id="тесты">Тесты<a class="headerlink" href="#тесты" title="Permanent link">&para;</a></h2>
 <p>По требованиям TDD модульные тесты должны писаться заранее, еще до написания кода проекта.</p>
 <p>Законы:</p>
