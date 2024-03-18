@@ -35,3 +35,4 @@
 
 -   [Адаптер](structural/adapter.md);
 -   [Мост](structural/bridge.md);
+-   [Компоновщик](structural/composite.md);
