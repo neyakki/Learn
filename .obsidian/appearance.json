@@ -1,0 +1,13 @@
+{
+  "cssTheme": "Catppuccin",
+  "baseFontSize": 14,
+  "baseFontSizeAction": true,
+  "accentColor": "#8f60be",
+  "interfaceFontFamily": "Calibri",
+  "textFontFamily": "JetBrainsMono Nerd Font",
+  "monospaceFontFamily": "JetBrainsMono Nerd Font Mono",
+  "nativeMenus": false,
+  "enabledCssSnippets": [
+    "style"
+  ]
+}

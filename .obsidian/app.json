@@ -1,0 +1,26 @@
+{
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "./attachments",
+  "showInlineTitle": false,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "Letter",
+    "landscape": true,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "readableLineLength": true,
+  "defaultViewMode": "preview",
+  "spellcheck": true,
+  "strictLineBreaks": false,
+  "propertiesInDocument": "visible",
+  "foldIndent": true,
+  "foldHeading": true,
+  "showLineNumber": true,
+  "useTab": true,
+  "newFileFolderPath": "new",
+  "newLinkFormat": "shortest",
+  "showRibbon": false
+}
