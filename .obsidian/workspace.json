@@ -4,28 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ad70736b801281d8",
+        "id": "f93de8dada31639e",
         "type": "tabs",
         "children": [
           {
-            "id": "95da98e4c4d32dde",
+            "id": "5482400454c69bbc",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "plan/sprints/sprint 2.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "IT/Computer_science/Algorithms/Kadane_algorithms.md",
+                "mode": "preview",
+                "source": false
               },
-              "icon": "lucide-trello",
-              "title": "sprint 2"
+              "icon": "lucide-file",
+              "title": "Kadane_algorithms"
             }
           }
         ]
@@ -75,7 +68,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 251.5
+    "width": 280
   },
   "right": {
     "id": "fb19a2cd911a0291",
@@ -91,10 +84,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "plan/sprints/sprint 2.md"
+                "file": "IT/Computer_science/Algorithms/Kadane_algorithms.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of sprint 2"
+              "title": "Outline of Kadane_algorithms"
             }
           },
           {
@@ -134,7 +127,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 233
+    "width": 233,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -147,27 +141,35 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "95da98e4c4d32dde",
+  "active": "5482400454c69bbc",
   "lastOpenFiles": [
-    "plan/sprints/sprint 1.md",
+    "IT/Computer_science/Algorithms/statics/img/kadane/Kadane.svg",
+    "Excalidraw/Kadane.md",
+    "IT/Computer_science/Algorithms/Kadane_algorithms.md",
+    "IT/Computer_science/Algorithms/statics/img/kadane/Kadane.png",
     "IT/Computer_science/Data_structures/Array.md",
+    "IT/Computer_science/Algorithms/statics/img/kadane/Local_maximum_3.png",
+    "Untitled.canvas",
+    "IT/Computer_science/Algorithms/statics/img/kadane",
+    "IT/Computer_science/Algorithms/attachments/Pasted image 20241021214738.png",
+    "IT/Computer_science/Algorithms/attachments",
+    "Excalidraw",
+    "plan/sprints/sprint 1.md",
+    "IT/Computer_science/Algorithms/Untitled",
+    "IT/Computer_science/Algorithms/Algorithms.md",
+    "IT/web/Internet/Internet.md",
+    "plan/sprints/sprint 2.md",
     "Practicum/Python/practices/data_structures/array/__pycache__/find_max_min.cpython-312.pyc",
     "Practicum/Python/tests/data_structures/array/__pycache__/test_find_max_min.cpython-312-pytest-8.3.3.pyc",
     "Practicum/Python/tests/data_structures/array/test_find_max_min.py",
     "Practicum/Python/tests/data_structures/array/test_reverse_array copy.py",
     "Practicum/Python/tests/data_structures/array/find_max_min.py",
     "Practicum/Python/practices/data_structures/array/find_max_min.py",
-    "Practicum/Python/practices/data_structures/array/search_max_min.py",
-    "Practicum/Python/tests/__init__.py",
-    "Practicum/Python/tests/data_structures/__init__.py",
-    "Practicum/Python/tests/data_structures/array/__init__.py",
-    "IT/Computer_science/Algorithms/Algorithms.md",
     "IT/Computer_science/Data_structures/Linked_list.md",
     "IT/Computer_science/Data_structures/Core.md",
     "IT/Computer_science/Data_structures/Stack.md",
     "IT/Computer_science/Data_structures/Queue.md",
     "IT/Computer_science/Algorithms/Algorithms.pandoc.md",
-    "IT/web/Internet/Internet.md",
     "IT/Computer_science/Algorithms/statics/img/bigO.jpg",
     "IT/Computer_science/Algorithms/statics/img/theta.jpg",
     "IT/Computer_science/Algorithms/statics/img/omega.jpg",
@@ -186,14 +188,6 @@
     "IT/web/old/server/Load balancer.md",
     "IT/web/old/Cookie.md",
     "IT/web/old/ur/urn.md",
-    "IT/web/old/ur/url.md",
-    "IT/web/old/ur/uri.md",
-    "IT/web/old/Session.md",
-    "it/computer science/statics/complex.png",
-    "it/computer science/statics/omega 1.jpg",
-    "it/computer science/statics/bigO.jpg",
-    "it/computer science/statics/theta.jpg",
-    "it/computer science/statics/omega.jpg",
     "it/computer science/data structure/Без названия.canvas",
     "plan/Без названия.canvas",
     "Без названия.canvas"
