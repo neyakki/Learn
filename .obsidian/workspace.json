@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "256d3450b4c87df9",
+        "id": "a57172b1a3089fa1",
         "type": "tabs",
         "children": [
           {
-            "id": "f1db16f402f52206",
+            "id": "f68c2072e8cd699f",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -44,7 +44,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Поиск"
+              "title": "Search"
             }
           },
           {
@@ -56,7 +56,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-folder-closed",
-              "title": "Файловый менеджер"
+              "title": "Files"
             }
           }
         ],
@@ -128,33 +128,32 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Меню быстрого перехода": false,
-      "graph:Граф": false,
-      "canvas:Создать новый холст": false,
-      "templates:Вставить шаблон": false,
-      "command-palette:Открыть палитру команд": false,
-      "obsidian-kanban:Создать новую доску": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-kanban:Create new board": false,
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f1db16f402f52206",
+  "active": "f68c2072e8cd699f",
   "lastOpenFiles": [
-    "IT/Computer_science/Data_structures/Queue.md",
-    "IT/web/Base/Internet.md",
-    "IT/web/Web.md",
-    "IT/web/Internet/Без названия.md",
-    "IT/Computer_science/Data_structures/Data_Structures.md",
-    "IT/Computer_science/Computer_science.md",
-    "IT/IT.md",
-    "templates/Kanban.md",
-    "plan/sprints/sprint 2.md",
+    "IT/Computer_science/Data_structures/Array.md",
+    "Web.md",
+    "IT/Computer_science/Algorithms/Kadane_algorithms.md",
+    "IT/Computer_science/Algorithms/Algorithms.md",
+    "IT/Computer_science/Algorithms/Trapping_rain_water.md",
     "plan/sprints/backlog.md",
     "plan/Notes.md",
-    "plan/sprints/sprint 1.md",
-    "IT/Computer_science/Data_structures/Linked_list.md",
-    "IT/Computer_science/Data_structures/Array.md",
-    "Other/symbols.pdf",
-    "IT/Computer_science/Algorithms/Kadane_algorithms.md",
+    "IT/IT.md",
+    "IT/Computer_science/Data_structures/Data_Structures.md",
+    "IT/Computer_science/Computer_science.md",
+    "IT/Computer_science/Algorithms/statics/img/Trapping_rain_water/Rain.svg",
+    "IT/Computer_science/Algorithms/statics/img/Trapping_rain_water",
+    "Excalidraw/Drawing 2024-10-23 19.48.43.excalidraw.md",
+    "Excalidraw/Drawing 2024-10-23 19.48.43.excalidraw.png",
+    "Excalidraw",
     "IT/Computer_science/Algorithms/statics/img/kadane/Kadane.svg",
     "Excalidraw/Kadane.md",
     "IT/Computer_science/Algorithms/statics/img/kadane/Kadane.png",
@@ -163,28 +162,30 @@
     "IT/Computer_science/Algorithms/statics/img/kadane",
     "IT/Computer_science/Algorithms/attachments/Pasted image 20241021214738.png",
     "IT/Computer_science/Algorithms/attachments",
-    "Excalidraw",
+    "plan/sprints/sprint 1.md",
     "IT/Computer_science/Algorithms/Untitled",
-    "IT/Computer_science/Algorithms/Algorithms.md",
+    "IT/web/Internet/Internet.md",
+    "plan/sprints/sprint 2.md",
     "Practicum/Python/practices/data_structures/array/__pycache__/find_max_min.cpython-312.pyc",
     "Practicum/Python/tests/data_structures/array/__pycache__/test_find_max_min.cpython-312-pytest-8.3.3.pyc",
     "Practicum/Python/tests/data_structures/array/test_find_max_min.py",
     "Practicum/Python/tests/data_structures/array/test_reverse_array copy.py",
     "Practicum/Python/tests/data_structures/array/find_max_min.py",
+    "IT/Computer_science/Data_structures/Linked_list.md",
+    "IT/Computer_science/Data_structures/Core.md",
     "IT/Computer_science/Data_structures/Stack.md",
+    "IT/Computer_science/Data_structures/Queue.md",
     "IT/Computer_science/Algorithms/Algorithms.pandoc.md",
     "IT/Computer_science/Algorithms/statics/img/bigO.jpg",
     "IT/Computer_science/Algorithms/statics/img/theta.jpg",
     "IT/Computer_science/Algorithms/statics/img/omega.jpg",
     "IT/Computer_science/Algorithms/statics/img/omega 1.jpg",
-    "IT/Computer_science/Algorithms/statics/img/complex.png",
     "Untitled.md",
     "IT/web/old/protocol/udp.md",
     "IT/web/old/protocol/tcp.md",
     "IT/web/old/protocol/ssl.md",
     "IT/web/old/protocol/protocols.md",
     "IT/web/old/protocol/https.md",
-    "IT/web/old/protocol/http.md",
     "it/computer science/data structure/Без названия.canvas",
     "plan/Без названия.canvas",
     "Без названия.canvas"
