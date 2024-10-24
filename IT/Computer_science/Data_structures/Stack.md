@@ -1,3 +1,9 @@
+---
+tags:
+  - data_structure
+  - stack
+date: 2024-10-24T18:52
+---
 # Stack
 ## Описание
 

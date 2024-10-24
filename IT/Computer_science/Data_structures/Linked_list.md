@@ -1,3 +1,9 @@
+---
+tags:
+  - "#data_structure"
+  - "#linked_list"
+date: 2024-10-24T18:51
+---
 # Linked List
 
 ## Описание

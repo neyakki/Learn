@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "a57172b1a3089fa1",
+        "id": "09a752ca2c57f61b",
         "type": "tabs",
         "children": [
           {
-            "id": "f68c2072e8cd699f",
+            "id": "e9fa621928908824",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "IT/Computer_science/Algorithms/Trapping_rain_water.md",
+                "file": "plan/Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Trapping_rain_water"
+              "title": "Notes"
             }
           }
         ]
@@ -68,8 +68,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 280,
-    "collapsed": true
+    "width": 280
   },
   "right": {
     "id": "fb19a2cd911a0291",
@@ -85,10 +84,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "IT/Computer_science/Algorithms/Kadane_algorithms.md"
+                "file": "plan/Notes.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Kadane_algorithms"
+              "title": "Outline of Notes"
             }
           },
           {
@@ -142,18 +141,33 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f68c2072e8cd699f",
+  "active": "e9fa621928908824",
   "lastOpenFiles": [
-    "IT/Computer_science/Data_structures/Array.md",
-    "Web.md",
-    "IT/Computer_science/Algorithms/Kadane_algorithms.md",
+    "plan/sprints/sprint 2.md",
     "IT/Computer_science/Algorithms/Algorithms.md",
-    "IT/Computer_science/Algorithms/Trapping_rain_water.md",
-    "plan/sprints/backlog.md",
-    "plan/Notes.md",
+    "Untitled.md",
+    "plan/sprints/sprint 1.md",
+    "IT/Computer_science/Data_structures/Stack.md",
+    "IT/web/Web.md",
     "IT/IT.md",
-    "IT/Computer_science/Data_structures/Data_Structures.md",
+    "IT/web/Base/Internet.md",
+    "IT/web/Base",
+    "IT/web",
+    "Web.md",
     "IT/Computer_science/Computer_science.md",
+    "IT/Computer_science/Data_structures/Data_Structures.md",
+    "IT/Computer_science/Data_structures/Array.md",
+    "IT/Computer_science/Data_structures/Queue.md",
+    "IT/Computer_science/Data_structures/Linked_list.md",
+    "IT/Computer_science/Algorithms/Other/Trapping_rain_water.md",
+    "IT/Computer_science/Algorithms/Other/Kadane_algorithms.md",
+    "TES.md",
+    "templates/Summary_learn.md",
+    "IT/Computer_science/Algorithms/Other/Trapping_rain_water 1.md",
+    "templates/test.md",
+    "plan/Notes.md",
+    "IT/Computer_science/Algorithms/Other",
+    "plan/sprints/backlog.md",
     "IT/Computer_science/Algorithms/statics/img/Trapping_rain_water/Rain.svg",
     "IT/Computer_science/Algorithms/statics/img/Trapping_rain_water",
     "Excalidraw/Drawing 2024-10-23 19.48.43.excalidraw.md",
@@ -167,30 +181,15 @@
     "IT/Computer_science/Algorithms/statics/img/kadane",
     "IT/Computer_science/Algorithms/attachments/Pasted image 20241021214738.png",
     "IT/Computer_science/Algorithms/attachments",
-    "plan/sprints/sprint 1.md",
-    "IT/Computer_science/Algorithms/Untitled",
     "IT/web/Internet/Internet.md",
-    "plan/sprints/sprint 2.md",
     "Practicum/Python/practices/data_structures/array/__pycache__/find_max_min.cpython-312.pyc",
     "Practicum/Python/tests/data_structures/array/__pycache__/test_find_max_min.cpython-312-pytest-8.3.3.pyc",
     "Practicum/Python/tests/data_structures/array/test_find_max_min.py",
-    "Practicum/Python/tests/data_structures/array/test_reverse_array copy.py",
-    "Practicum/Python/tests/data_structures/array/find_max_min.py",
-    "IT/Computer_science/Data_structures/Linked_list.md",
     "IT/Computer_science/Data_structures/Core.md",
-    "IT/Computer_science/Data_structures/Stack.md",
-    "IT/Computer_science/Data_structures/Queue.md",
-    "IT/Computer_science/Algorithms/Algorithms.pandoc.md",
     "IT/Computer_science/Algorithms/statics/img/bigO.jpg",
     "IT/Computer_science/Algorithms/statics/img/theta.jpg",
     "IT/Computer_science/Algorithms/statics/img/omega.jpg",
     "IT/Computer_science/Algorithms/statics/img/omega 1.jpg",
-    "Untitled.md",
-    "IT/web/old/protocol/udp.md",
-    "IT/web/old/protocol/tcp.md",
-    "IT/web/old/protocol/ssl.md",
-    "IT/web/old/protocol/protocols.md",
-    "IT/web/old/protocol/https.md",
     "it/computer science/data structure/Без названия.canvas",
     "plan/Без названия.canvas",
     "Без названия.canvas"

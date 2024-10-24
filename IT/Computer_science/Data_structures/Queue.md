@@ -1,3 +1,9 @@
+---
+tags:
+  - data_structure
+  - "#queue"
+date: 2024-10-24T18:52
+---
 # Queue
 
 ## Описание
