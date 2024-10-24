@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "04aef7b859a7e1fd",
+        "id": "256d3450b4c87df9",
         "type": "tabs",
         "children": [
           {
-            "id": "577844ffbd63e158",
+            "id": "f1db16f402f52206",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Новая вкладка"
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           }
         ]
@@ -137,13 +137,20 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "577844ffbd63e158",
+  "active": "f1db16f402f52206",
   "lastOpenFiles": [
+    "IT/Computer_science/Data_structures/Queue.md",
+    "IT/web/Base/Internet.md",
+    "IT/web/Web.md",
+    "IT/web/Internet/Без названия.md",
+    "IT/Computer_science/Data_structures/Data_Structures.md",
+    "IT/Computer_science/Computer_science.md",
+    "IT/IT.md",
+    "templates/Kanban.md",
     "plan/sprints/sprint 2.md",
     "plan/sprints/backlog.md",
     "plan/Notes.md",
     "plan/sprints/sprint 1.md",
-    "IT/web/Internet/Internet.md",
     "IT/Computer_science/Data_structures/Linked_list.md",
     "IT/Computer_science/Data_structures/Array.md",
     "Other/symbols.pdf",
@@ -164,9 +171,7 @@
     "Practicum/Python/tests/data_structures/array/test_find_max_min.py",
     "Practicum/Python/tests/data_structures/array/test_reverse_array copy.py",
     "Practicum/Python/tests/data_structures/array/find_max_min.py",
-    "IT/Computer_science/Data_structures/Core.md",
     "IT/Computer_science/Data_structures/Stack.md",
-    "IT/Computer_science/Data_structures/Queue.md",
     "IT/Computer_science/Algorithms/Algorithms.pandoc.md",
     "IT/Computer_science/Algorithms/statics/img/bigO.jpg",
     "IT/Computer_science/Algorithms/statics/img/theta.jpg",
@@ -180,11 +185,6 @@
     "IT/web/old/protocol/protocols.md",
     "IT/web/old/protocol/https.md",
     "IT/web/old/protocol/http.md",
-    "IT/web/old/server/Virtual host.md",
-    "IT/web/old/server/Web-server.md",
-    "IT/web/old/server/Reverce proxy.md",
-    "IT/web/old/server/Load balancer.md",
-    "IT/web/old/Cookie.md",
     "it/computer science/data structure/Без названия.canvas",
     "plan/Без названия.canvas",
     "Без названия.canvas"

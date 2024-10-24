@@ -3,6 +3,8 @@
 - https://roadmap.sh/backend
 - https://roadmap.sh/computer-science
 - https://roadmap.sh/datastructures-and-algorithms
+- https://roadmap.sh/software-design-architecture
+- https://roadmap.sh/api-design
 
 ## Tasks
 
