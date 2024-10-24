@@ -11,10 +11,14 @@
             "id": "f68c2072e8cd699f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "IT/Computer_science/Algorithms/Trapping_rain_water.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Trapping_rain_water"
             }
           }
         ]
@@ -64,7 +68,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 280
+    "width": 280,
+    "collapsed": true
   },
   "right": {
     "id": "fb19a2cd911a0291",
